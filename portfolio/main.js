@@ -41,13 +41,22 @@ camera.position.z = 5
 const planeGeometry = new THREE.
   PlaneGeometry(5, 5, 10, 10)
 const planeMaterial = new THREE.
-  MeshBasicMaterial({ 
+  // This is invisible until we add a light to illuminate it
+  MeshPhongMaterial({ 
   color: 0x00ff00,
   // Ensures that both sides of plan is seen. Default is off due to performance reasons
   side: THREE.DoubleSide })
 
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
 scene.add(planeMesh)
+
+const light = new THREE.DirectionalLight(
+  0xffffff, 1
+)
+
+// Where we want to place our light relative to the center of the scene. z value of 1 moves it towards us
+light.position.set(0, 0, 1)
+scene.add(light)
 
 // Recursive
 function animate() {
