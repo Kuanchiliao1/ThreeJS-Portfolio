@@ -14,9 +14,6 @@ const camera = new THREE.
 const renderer = new THREE.WebGLRenderer(
 
 )
-console.log(scene)
-console.log(camera)
-console.log(renderer)
 
 renderer.setSize(innerWidth, innerHeight)
 
@@ -28,30 +25,40 @@ document.body.appendChild(renderer.
 // Can be thought of as a wireframe
 const boxGeometry = new THREE.BoxGeometry
   (1, 1, 1)
-console.log(boxGeometry)
 
 // Material is basically the texture that fills up geometry
 const material = new THREE.
   MeshBasicMaterial({color: 0x12FF91})
 
-console.log(material)
 
 // Must pass in geometry and material to create a mesh
 const mesh = new THREE.Mesh(boxGeometry, material)
-console.log(mesh)
 
 // Add mesh to the scene
 scene.add(mesh)
-
 camera.position.z = 5
+
+const planeGeometry = new THREE.
+  PlaneGeometry(5, 5, 10, 10)
+const planeMaterial = new THREE.
+  MeshBasicMaterial({ 
+  color: 0x00ff00,
+  // Ensures that both sides of plan is seen. Default is off due to performance reasons
+  side: THREE.DoubleSide })
+
+const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
+scene.add(planeMesh)
 
 // Recursive
 function animate() {
   requestAnimationFrame(animate)
   // Still need to call render function to render out our scene
   renderer.render(scene, camera)
-  mesh.rotation.x += 0.01
-  mesh.rotation.y += 0.01
+  mesh.rotation.x += 0.02
+  mesh.rotation.y += 0.02
+  mesh.rotation.z += 0.02
+  planeMesh.rotation.y += 0.02
+  planeMesh.rotation.z += 0.02
 }
 
 animate()
