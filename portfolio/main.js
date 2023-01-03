@@ -1,5 +1,4 @@
 import './style.css'
-
 import * as THREE from 'three';
 
 // The 3D environment
@@ -45,14 +44,33 @@ const planeMaterial = new THREE.
   MeshPhongMaterial({ 
   color: 0x00ff00,
   // Ensures that both sides of plan is seen. Default is off due to performance reasons
-  side: THREE.DoubleSide })
+  side: THREE.DoubleSide,
+  // Flat surfaces get shading applied
+  flatShading: true
+});
+
+console.log(THREE)
 
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
 scene.add(planeMesh)
+console.log(planeMesh.geometry.attributes.position.array)
+
+const {array} = planeMesh.geometry.attributes.position
+
+// Iterate over sets of three coordinates(representing verticies)
+for (let i = 0; i < array.length; i += 3) {
+  const x = array[i]
+  const y = array[i + 1]
+  const z = array[i + 2]
+
+  // + 2 allows us to access the z coordinate
+  array[i + 2] = z + Math.random()
+}
 
 const light = new THREE.DirectionalLight(
   0xffffff, 1
 )
+
 
 // Where we want to place our light relative to the center of the scene. z value of 1 moves it towards us
 light.position.set(0, 0, 1)
