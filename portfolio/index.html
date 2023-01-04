@@ -29,14 +29,18 @@
         right: 50%;
         transform: translateX(50%);
       }
+
+      .translate-Y-down {
+        transform: translateY(2em)
+      }
     </style>
   </head>
   <body>
     <div id="app">
       <div class="absolute text-white text-center center-Y center-X">
-        <h1 class="text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
-        <p class="text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
-        <a class="inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
+        <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
+        <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
+        <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
       </div>
     </div>
     <script type="module" src="/main.js"></script>

@@ -296,3 +296,26 @@ addEventListener("mousemove", (event) => {
   mouse.x = (event.clientX - 0.5 * innerWidth) / (0.5 * innerWidth);
   mouse.y = -(event.clientY - 0.5 * innerHeight) / (0.5 * innerHeight);
 });
+
+gsap.to('#tony-liao', {
+  opacity: 1,
+  duration: 2.5,
+  y: 0,
+  ease: 'expo'
+})
+
+gsap.to('#portfolio-description', {
+  opacity: 1,
+  duration: 2.5,
+  y: 0,
+  delay: 0.5,
+  ease: 'expo'
+})
+
+gsap.to('#my-work-btn', {
+  opacity: 1,
+  duration: 2.5,
+  y: 0,
+  delay: 1,
+  ease: 'expo'
+})
