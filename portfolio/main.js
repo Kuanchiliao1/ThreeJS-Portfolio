@@ -1,3 +1,4 @@
+import gsap from 'gsap'
 import './style.css'
 import * as THREE from 'three';
 // For using GUI to modify any values instead of using code
@@ -121,7 +122,7 @@ for (let i = 0; i < array.length; i += 3) {
 
 const colors = []
 for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-  colors.push(0, 1, 1)
+  colors.push(0, 0.19, 0.4)
 }
 
 
@@ -165,21 +166,53 @@ function animate() {
     const {color} = intersects[0].object.geometry.attributes
     // RGB: setX will set R, setY will set G, etc..
     // Vertice #1
-    color.setX(intersects[0].face.a, 1)
-    color.setY(intersects[0].face.a, 1)
-    color.setZ(intersects[0].face.a, 0)
+    color.setX(intersects[0].face.a, 0.1)
+    color.setY(intersects[0].face.a, 0.5)
+    color.setZ(intersects[0].face.a, 1)
     // Vertice #2
-    color.setX(intersects[0].face.b, 1)
-    color.setY(intersects[0].face.b, 1)
-    color.setZ(intersects[0].face.b, 0)
+    color.setX(intersects[0].face.b, 0.1)
+    color.setY(intersects[0].face.b, 0.5)
+    color.setZ(intersects[0].face.b, 1)
     // Vertice #3
-    color.setX(intersects[0].face.c, 1)
-    color.setY(intersects[0].face.c, 1)
-    color.setZ(intersects[0].face.c, 0)
+    color.setX(intersects[0].face.c, 0.1)
+    color.setY(intersects[0].face.c, 0.5)
+    color.setZ(intersects[0].face.c, 1)
     intersects[0].object.geometry.attributes.color.needsUpdate = true;
 
     // These are the three vertices that make up a face, using indices to track
     // Object { a: 91, b: 102, c: 92 }
+
+    const initialColor = {
+      r: 0,
+      g: 0.19,
+      b: 0.4
+    }
+    const hoverColor = {
+      r: 0.1,
+      g: 0.5,
+      b: 1
+    }
+    // gsap for animation
+    gsap.to(hoverColor, {
+      r: initialColor.r,
+      g: initialColor.g,
+      b: initialColor.b,
+      onUpdate: () => {
+        // Need to set values within geometry for effect
+        color.setX(intersects[0].face.a, hoverColor.r)
+        color.setY(intersects[0].face.a, hoverColor.g)
+        color.setZ(intersects[0].face.a, hoverColor.b)
+        // Vertice #2
+        color.setX(intersects[0].face.b, hoverColor.r)
+        color.setY(intersects[0].face.b, hoverColor.g)
+        color.setZ(intersects[0].face.b, hoverColor.b)
+        // Vertice #3
+        color.setX(intersects[0].face.c, hoverColor.r)
+        color.setY(intersects[0].face.c, hoverColor.g)
+        color.setZ(intersects[0].face.c, hoverColor.b)
+        color.needsUpdate = true
+      }
+    })
   }
 }
 
