@@ -174,6 +174,25 @@ const backLight = new THREE.DirectionalLight(0xffffff, 1);
 backLight.position.set(0, 0, -1);
 scene.add(backLight);
 
+const starGeometry = new THREE.BufferGeometry()
+const starMaterial = new THREE.PointsMaterial({
+  color: 0xffffff
+})
+
+const starVerticies = []
+for (let i = 0; i < 5000; i++) {
+  // Random num between -1000 and 1000
+  const x = (Math.random() - 0.5) * 2000
+  const y = (Math.random() - 0.5) * 2000
+  const z = (Math.random() - 0.5) * 2000
+  starVerticies.push(x, y, z)
+}
+
+starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVerticies, 3))
+
+const stars = new THREE.Points(starGeometry, starMaterial)
+scene.add(stars)
+
 const mouse = {
   x: undefined,
   y: undefined,
@@ -266,6 +285,8 @@ function animate() {
       },
     });
   }
+
+  stars.rotation.x += 0.0015
 }
 
 animate();
