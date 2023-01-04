@@ -51,6 +51,8 @@ function generatePlane() {
     }
 }
 
+//? Determine whether a laser would hit the object
+const raycaster = new THREE.Raycaster()
 // The 3D environment
 const scene = new THREE.Scene()
 // Determines the position from which the user "sees"
@@ -130,6 +132,11 @@ const backLight = new THREE.DirectionalLight(
 backLight.position.set(0, 0, -1)
 scene.add(backLight)
 
+const mouse = {
+  x: undefined,
+  y: undefined
+}
+
 // Recursive
 function animate() {
   requestAnimationFrame(animate)
@@ -140,15 +147,18 @@ function animate() {
   // mesh.rotation.z += 0.02
   // planeMesh.rotation.y += 0.02
   // planeMesh.rotation.z += 0.02
+
+  // Rays are coming from the camera
+  raycaster.setFromCamera(mouse, camera)
+  // Represents object I'm currently hovering over
+  const intersects = raycaster.
+    intersectObject(planeMesh)
 }
 
 animate()
 
 
-const mouse = {
-  x: undefined,
-  y: undefined
-}
+
 
 // Normalize to a 0,0 coordinate system starting from the center
 addEventListener('mousemove', (event) => {
