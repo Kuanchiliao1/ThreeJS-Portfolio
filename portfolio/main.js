@@ -143,3 +143,16 @@ function animate() {
 }
 
 animate()
+
+
+const mouse = {
+  x: undefined,
+  y: undefined
+}
+
+// Normalize to a 0,0 coordinate system starting from the center
+addEventListener('mousemove', (event) => {
+  mouse.x = (event.clientX - .5 * innerWidth) / (.5 *innerWidth)
+  mouse.y = -(event.clientY - .5 * innerHeight) / (.5 *innerHeight)
+  console.log(mouse)
+});
