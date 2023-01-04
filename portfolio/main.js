@@ -1,5 +1,54 @@
 import './style.css'
 import * as THREE from 'three';
+// For using GUI to modify any values instead of using code
+import * as dat from 'dat.gui';
+
+const gui = new dat.GUI()
+// For adding the properties we want in the GUI
+const world = {
+  plane: {
+    width: 10,
+    height: 10,
+    widthSegments: 10,
+    heightSegments: 10
+  }
+}
+
+gui.add(world.plane, 'width', 1, 20)
+  // Invoke a function whenever the value of slider changes
+  .onChange(generatePlane)
+
+gui.add(world.plane, 'height', 1, 20)
+// Invoke a function whenever the value of slider changes
+.onChange(generatePlane)
+
+gui.add(world.plane, 'widthSegments', 1, 50)
+// Invoke a function whenever the value of slider changes
+.onChange(generatePlane)
+
+gui.add(world.plane, 'heightSegments', 1, 50)
+// Invoke a function whenever the value of slider changes
+.onChange(generatePlane)
+
+function generatePlane() {
+  planeMesh.geometry.dispose()
+  planeMesh.geometry = new THREE.
+    PlaneGeometry(world.plane.width, 
+      world.plane.height, 
+      world.plane.widthSegments, 
+      world.plane.widthSegments)
+
+    const {array} = planeMesh.geometry.attributes.position
+    // Iterate over sets of three coordinates(representing verticies)
+    for (let i = 0; i < array.length; i += 3) {
+      const x = array[i]
+      const y = array[i + 1]
+      const z = array[i + 2]
+    
+      // + 2 allows us to access the z coordinate
+      array[i + 2] = z + Math.random()
+    }
+}
 
 // The 3D environment
 const scene = new THREE.Scene()
@@ -56,7 +105,6 @@ scene.add(planeMesh)
 console.log(planeMesh.geometry.attributes.position.array)
 
 const {array} = planeMesh.geometry.attributes.position
-
 // Iterate over sets of three coordinates(representing verticies)
 for (let i = 0; i < array.length; i += 3) {
   const x = array[i]
@@ -81,11 +129,11 @@ function animate() {
   requestAnimationFrame(animate)
   // Still need to call render function to render out our scene
   renderer.render(scene, camera)
-  mesh.rotation.x += 0.02
-  mesh.rotation.y += 0.02
-  mesh.rotation.z += 0.02
-  planeMesh.rotation.y += 0.02
-  planeMesh.rotation.z += 0.02
+  // mesh.rotation.x += 0.02
+  // mesh.rotation.y += 0.02
+  // mesh.rotation.z += 0.02
+  // planeMesh.rotation.y += 0.02
+  // planeMesh.rotation.z += 0.02
 }
 
 animate()
