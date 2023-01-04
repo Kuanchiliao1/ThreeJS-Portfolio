@@ -1,155 +1,164 @@
-import gsap from 'gsap'
-import './style.css'
-import * as THREE from 'three';
+import gsap from "gsap";
+import "./style.css";
+import * as THREE from "three";
 // For using GUI to modify any values instead of using code
-import * as dat from 'dat.gui';
+import * as dat from "dat.gui";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 
-const gui = new dat.GUI()
+const gui = new dat.GUI();
 // For adding the properties we want in the GUI
 const world = {
   plane: {
-    width: 10,
-    height: 10,
-    widthSegments: 10,
-    heightSegments: 10
-  }
-}
+    width: 19,
+    height: 19,
+    widthSegments: 17,
+    heightSegments: 17,
+  },
+};
 
-gui.add(world.plane, 'width', 1, 20)
+gui
+  .add(world.plane, "width", 1, 50)
   // Invoke a function whenever the value of slider changes
-  .onChange(generatePlane)
+  .onChange(generatePlane);
 
-gui.add(world.plane, 'height', 1, 20)
-// Invoke a function whenever the value of slider changes
-.onChange(generatePlane)
+gui
+  .add(world.plane, "height", 1, 50)
+  // Invoke a function whenever the value of slider changes
+  .onChange(generatePlane);
 
-gui.add(world.plane, 'widthSegments', 1, 50)
-// Invoke a function whenever the value of slider changes
-.onChange(generatePlane)
+gui
+  .add(world.plane, "widthSegments", 1, 50)
+  // Invoke a function whenever the value of slider changes
+  .onChange(generatePlane);
 
-gui.add(world.plane, 'heightSegments', 1, 50)
-// Invoke a function whenever the value of slider changes
-.onChange(generatePlane)
+gui
+  .add(world.plane, "heightSegments", 1, 50)
+  // Invoke a function whenever the value of slider changes
+  .onChange(generatePlane);
 
 function generatePlane() {
-  planeMesh.geometry.dispose()
-  planeMesh.geometry = new THREE.
-    PlaneGeometry(world.plane.width, 
-      world.plane.height, 
-      world.plane.widthSegments, 
-      world.plane.widthSegments)
+  planeMesh.geometry.dispose();
+  planeMesh.geometry = new THREE.PlaneGeometry(
+    world.plane.width,
+    world.plane.height,
+    world.plane.widthSegments,
+    world.plane.widthSegments
+  );
 
-    const {array} = planeMesh.geometry.attributes.position
-    // Iterate over sets of three coordinates(representing verticies)
-    for (let i = 0; i < array.length; i += 3) {
-      const x = array[i]
-      const y = array[i + 1]
-      const z = array[i + 2]
-    
-      // + 2 allows us to access the z coordinate
-      array[i + 2] = z + Math.random()
-    }
+  const { array } = planeMesh.geometry.attributes.position;
+  // Iterate over sets of three coordinates(representing verticies)
+  for (let i = 0; i < array.length; i += 3) {
+    const x = array[i];
+    const y = array[i + 1];
+    const z = array[i + 2];
+
+    // + 2 allows us to access the z coordinate
+    array[i + 2] = z + Math.random();
+  }
+
+  const colors = [];
+  for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
+    colors.push(0, 0.19, 0.4);
+  }
+
+  // BufferAttribute must take Float32
+  planeMesh.geometry.setAttribute(
+    "color",
+    new THREE.BufferAttribute(new Float32Array(colors), 3)
+  );
 }
 
 //? Determine whether a laser would hit the object
-const raycaster = new THREE.Raycaster()
+const raycaster = new THREE.Raycaster();
 // The 3D environment
-const scene = new THREE.Scene()
+const scene = new THREE.Scene();
 // Determines the position from which the user "sees"
-const camera = new THREE.
-  PerspectiveCamera(75, innerWidth /
-  innerHeight, 
-  0.1, 
-  1000)
+const camera = new THREE.PerspectiveCamera(
+  75,
+  innerWidth / innerHeight,
+  0.1,
+  1000
+);
 // Converts 3D to 2D via calculations
-const renderer = new THREE.WebGLRenderer(
+const renderer = new THREE.WebGLRenderer();
 
-)
-
-renderer.setSize(innerWidth, innerHeight)
+renderer.setSize(innerWidth, innerHeight);
 
 // To remove the jagged edges of our shapes
-renderer.setPixelRatio(devicePixelRatio)
-document.body.appendChild(renderer.
-  domElement);
+renderer.setPixelRatio(devicePixelRatio);
+document.body.appendChild(renderer.domElement);
 
-new OrbitControls(camera, renderer.domElement)
+new OrbitControls(camera, renderer.domElement);
 
 // Can be thought of as a wireframe
-const boxGeometry = new THREE.BoxGeometry
-  (1, 1, 1)
+const boxGeometry = new THREE.BoxGeometry(1, 1, 1);
 
 // Material is basically the texture that fills up geometry
-const material = new THREE.
-  MeshBasicMaterial({color: 0x12FF91})
-
+const material = new THREE.MeshBasicMaterial({ color: 0x12ff91 });
 
 // Must pass in geometry and material to create a mesh
-const mesh = new THREE.Mesh(boxGeometry, material)
+const mesh = new THREE.Mesh(boxGeometry, material);
 
 // Add mesh to the scene
-scene.add(mesh)
-camera.position.z = 5
+scene.add(mesh);
+camera.position.z = 5;
 
+const planeGeometry = new THREE.PlaneGeometry(world.plane.width, world.plane.height, world.plane.widthSegments, world.plane.heightSegments);
+const planeMaterial =
+  new // This is invisible until we add a light to illuminate it
+  THREE.MeshPhongMaterial({
+    // Ensures that both sides of plan is seen. Default is off due to performance reasons
+    side: THREE.DoubleSide,
+    // Flat surfaces get shading applied
+    flatShading: true,
+    vertexColors: true,
+  });
 
-const planeGeometry = new THREE.
-  PlaneGeometry(5, 5, 10, 10)
-const planeMaterial = new THREE.
-  // This is invisible until we add a light to illuminate it
-  MeshPhongMaterial({ 
-  // Ensures that both sides of plan is seen. Default is off due to performance reasons
-  side: THREE.DoubleSide,
-  // Flat surfaces get shading applied
-  flatShading: true,
-  vertexColors: true
-});
+const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
+scene.add(planeMesh);
+console.log(planeMesh.geometry.attributes.position.array);
 
-const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
-scene.add(planeMesh)
-console.log(planeMesh.geometry.attributes.position.array)
-
-const {array} = planeMesh.geometry.attributes.position
+const { array } = planeMesh.geometry.attributes.position;
 // Iterate over sets of three coordinates(representing verticies)
 for (let i = 0; i < array.length; i += 3) {
-  const x = array[i]
-  const y = array[i + 1]
-  const z = array[i + 2]
+  const x = array[i];
+  const y = array[i + 1];
+  const z = array[i + 2];
 
   // + 2 allows us to access the z coordinate
-  array[i + 2] = z + Math.random()
+  array[i + 2] = z + Math.random();
 }
 
-const colors = []
+const colors = [];
 for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-  colors.push(0, 0.19, 0.4)
+  colors.push(0, 0.19, 0.4);
 }
-
 
 // BufferAttribute must take Float32
-planeMesh.geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3))
+planeMesh.geometry.setAttribute(
+  "color",
+  new THREE.BufferAttribute(new Float32Array(colors), 3)
+);
 
-const light = new THREE.DirectionalLight(
-  0xffffff, 1)
+const light = new THREE.DirectionalLight(0xffffff, 1);
 // Where we want to place our light relative to the center of the scene. z value of 1 moves it towards us
-light.position.set(0, 0, 1)
-scene.add(light)
+light.position.set(0, 0, 1);
+scene.add(light);
 
-const backLight = new THREE.DirectionalLight(
-  0xffffff, 1)
-backLight.position.set(0, 0, -1)
-scene.add(backLight)
+const backLight = new THREE.DirectionalLight(0xffffff, 1);
+backLight.position.set(0, 0, -1);
+scene.add(backLight);
 
 const mouse = {
   x: undefined,
-  y: undefined
-}
+  y: undefined,
+};
 
 // Recursive
 function animate() {
-  requestAnimationFrame(animate)
+  requestAnimationFrame(animate);
   // Still need to call render function to render out our scene
-  renderer.render(scene, camera)
+  renderer.render(scene, camera);
   // mesh.rotation.x += 0.02
   // mesh.rotation.y += 0.02
   // mesh.rotation.z += 0.02
@@ -157,26 +166,25 @@ function animate() {
   // planeMesh.rotation.z += 0.02
 
   // Rays are coming from the camera
-  raycaster.setFromCamera(mouse, camera)
+  raycaster.setFromCamera(mouse, camera);
   // Represents object I'm currently hovering over
-  const intersects = raycaster.
-    intersectObject(planeMesh)
+  const intersects = raycaster.intersectObject(planeMesh);
   if (intersects.length > 0) {
     // Destructuring to give easy access to the color property
-    const {color} = intersects[0].object.geometry.attributes
+    const { color } = intersects[0].object.geometry.attributes;
     // RGB: setX will set R, setY will set G, etc..
     // Vertice #1
-    color.setX(intersects[0].face.a, 0.1)
-    color.setY(intersects[0].face.a, 0.5)
-    color.setZ(intersects[0].face.a, 1)
+    color.setX(intersects[0].face.a, 0.1);
+    color.setY(intersects[0].face.a, 0.5);
+    color.setZ(intersects[0].face.a, 1);
     // Vertice #2
-    color.setX(intersects[0].face.b, 0.1)
-    color.setY(intersects[0].face.b, 0.5)
-    color.setZ(intersects[0].face.b, 1)
+    color.setX(intersects[0].face.b, 0.1);
+    color.setY(intersects[0].face.b, 0.5);
+    color.setZ(intersects[0].face.b, 1);
     // Vertice #3
-    color.setX(intersects[0].face.c, 0.1)
-    color.setY(intersects[0].face.c, 0.5)
-    color.setZ(intersects[0].face.c, 1)
+    color.setX(intersects[0].face.c, 0.1);
+    color.setY(intersects[0].face.c, 0.5);
+    color.setZ(intersects[0].face.c, 1);
     intersects[0].object.geometry.attributes.color.needsUpdate = true;
 
     // These are the three vertices that make up a face, using indices to track
@@ -185,13 +193,13 @@ function animate() {
     const initialColor = {
       r: 0,
       g: 0.19,
-      b: 0.4
-    }
+      b: 0.4,
+    };
     const hoverColor = {
       r: 0.1,
       g: 0.5,
-      b: 1
-    }
+      b: 1,
+    };
     // gsap for animation
     gsap.to(hoverColor, {
       r: initialColor.r,
@@ -199,30 +207,27 @@ function animate() {
       b: initialColor.b,
       onUpdate: () => {
         // Need to set values within geometry for effect
-        color.setX(intersects[0].face.a, hoverColor.r)
-        color.setY(intersects[0].face.a, hoverColor.g)
-        color.setZ(intersects[0].face.a, hoverColor.b)
+        color.setX(intersects[0].face.a, hoverColor.r);
+        color.setY(intersects[0].face.a, hoverColor.g);
+        color.setZ(intersects[0].face.a, hoverColor.b);
         // Vertice #2
-        color.setX(intersects[0].face.b, hoverColor.r)
-        color.setY(intersects[0].face.b, hoverColor.g)
-        color.setZ(intersects[0].face.b, hoverColor.b)
+        color.setX(intersects[0].face.b, hoverColor.r);
+        color.setY(intersects[0].face.b, hoverColor.g);
+        color.setZ(intersects[0].face.b, hoverColor.b);
         // Vertice #3
-        color.setX(intersects[0].face.c, hoverColor.r)
-        color.setY(intersects[0].face.c, hoverColor.g)
-        color.setZ(intersects[0].face.c, hoverColor.b)
-        color.needsUpdate = true
-      }
-    })
+        color.setX(intersects[0].face.c, hoverColor.r);
+        color.setY(intersects[0].face.c, hoverColor.g);
+        color.setZ(intersects[0].face.c, hoverColor.b);
+        color.needsUpdate = true;
+      },
+    });
   }
 }
 
-animate()
-
-
-
+animate();
 
 // Normalize to a 0,0 coordinate system starting from the center
-addEventListener('mousemove', (event) => {
-  mouse.x = (event.clientX - .5 * innerWidth) / (.5 *innerWidth)
-  mouse.y = -(event.clientY - .5 * innerHeight) / (.5 *innerHeight)
+addEventListener("mousemove", (event) => {
+  mouse.x = (event.clientX - 0.5 * innerWidth) / (0.5 * innerWidth);
+  mouse.y = -(event.clientY - 0.5 * innerHeight) / (0.5 * innerHeight);
 });
