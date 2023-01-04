@@ -5,15 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vite App</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <style>
+      @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&family=Space+Mono&display=swap');
       body {
         margin: 0px;
-        background-color: black;
+      }
+
+      .font-exo {
+        font-family: 'Exo 2', sans-serif;
+      }
+
+      .font-mono {
+        font-family: 'Space Mono', monospace;
+      }
+
+      .center-Y {
+        top: 50%;
+        transform: translateY(-50%);
+      }
+
+      .center-X {
+        right: 50%;
+        transform: translateX(50%);
       }
     </style>
   </head>
   <body>
-    <div id="app"></div>
+    <div id="app">
+      <div class="absolute text-white text-center center-Y center-X">
+        <h1 class="text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
+        <p class="text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
+        <a class="inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
+      </div>
+    </div>
     <script type="module" src="/main.js"></script>
   </body>
 </html>
