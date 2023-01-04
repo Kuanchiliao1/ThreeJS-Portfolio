@@ -347,3 +347,11 @@ document.getElementById('my-work-btn').
       delay: 2
     })
   })
+
+  addEventListener('resize', () => {
+    camera.aspect = innerWidth / innerHeight
+    // Tells threejs to apply updated aspect ration
+    camera.updateProjectionMatrix()
+    // change renderer to fit viewport
+    renderer.setSize(innerWidth, innerHeight)
+  })
