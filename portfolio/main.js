@@ -97,14 +97,12 @@ const planeGeometry = new THREE.
 const planeMaterial = new THREE.
   // This is invisible until we add a light to illuminate it
   MeshPhongMaterial({ 
-  color: 0x00ff00,
   // Ensures that both sides of plan is seen. Default is off due to performance reasons
   side: THREE.DoubleSide,
   // Flat surfaces get shading applied
-  flatShading: true
+  flatShading: true,
+  vertexColors: true
 });
-
-console.log(THREE)
 
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial)
 scene.add(planeMesh)
@@ -120,6 +118,15 @@ for (let i = 0; i < array.length; i += 3) {
   // + 2 allows us to access the z coordinate
   array[i + 2] = z + Math.random()
 }
+
+const colors = []
+for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
+  colors.push(0, 1, 1)
+}
+
+
+// BufferAttribute must take Float32
+planeMesh.geometry.setAttribute('color', new THREE.BufferAttribute(new Float32Array(colors), 3))
 
 const light = new THREE.DirectionalLight(
   0xffffff, 1)
@@ -153,6 +160,27 @@ function animate() {
   // Represents object I'm currently hovering over
   const intersects = raycaster.
     intersectObject(planeMesh)
+  if (intersects.length > 0) {
+    // Destructuring to give easy access to the color property
+    const {color} = intersects[0].object.geometry.attributes
+    // RGB: setX will set R, setY will set G, etc..
+    // Vertice #1
+    color.setX(intersects[0].face.a, 1)
+    color.setY(intersects[0].face.a, 1)
+    color.setZ(intersects[0].face.a, 0)
+    // Vertice #2
+    color.setX(intersects[0].face.b, 1)
+    color.setY(intersects[0].face.b, 1)
+    color.setZ(intersects[0].face.b, 0)
+    // Vertice #3
+    color.setX(intersects[0].face.c, 1)
+    color.setY(intersects[0].face.c, 1)
+    color.setZ(intersects[0].face.c, 0)
+    intersects[0].object.geometry.attributes.color.needsUpdate = true;
+
+    // These are the three vertices that make up a face, using indices to track
+    // Object { a: 91, b: 102, c: 92 }
+  }
 }
 
 animate()
@@ -164,5 +192,4 @@ animate()
 addEventListener('mousemove', (event) => {
   mouse.x = (event.clientX - .5 * innerWidth) / (.5 *innerWidth)
   mouse.y = -(event.clientY - .5 * innerHeight) / (.5 *innerHeight)
-  console.log(mouse)
 });
