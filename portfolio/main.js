@@ -131,7 +131,7 @@ const mesh = new THREE.Mesh(boxGeometry, material);
 scene.add(mesh);
 
 // How far away camera is
-camera.position.z = 100;
+camera.position.z = 50;
 
 const planeGeometry = new THREE.PlaneGeometry(
   world.plane.width,
@@ -319,3 +319,31 @@ gsap.to('#my-work-btn', {
   delay: 1,
   ease: 'expo'
 })
+
+document.getElementById('my-work-btn').
+  addEventListener('click', (e) => {
+    // prevents link from firing
+    e.preventDefault
+    gsap.to('#container--intro', {
+      opacity: 0
+    })
+    // Zoom in effect
+    gsap.to(camera.position, {
+      z: 25,
+      ease: 'power3.inOut',
+      duration: 2
+    })
+    // camera rotation, uses radians!
+    gsap.to(camera.rotation, {
+      x: 1.57,
+      ease: 'power3.inOut',
+      duration: 2
+    })
+    // Zoom in effect
+    gsap.to(camera.position, {
+      y: 1000,
+      ease: 'power3.in',
+      duration: 1.25,
+      delay: 2
+    })
+  })
