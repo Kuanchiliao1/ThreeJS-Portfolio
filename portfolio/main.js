@@ -9,30 +9,30 @@ const gui = new dat.GUI();
 // For adding the properties we want in the GUI
 const world = {
   plane: {
-    width: 19,
-    height: 19,
-    widthSegments: 17,
-    heightSegments: 17,
+    width: 400,
+    height: 400,
+    widthSegments: 50,
+    heightSegments: 50,
   },
 };
 
 gui
-  .add(world.plane, "width", 1, 50)
+  .add(world.plane, "width", 1, 500)
   // Invoke a function whenever the value of slider changes
   .onChange(generatePlane);
 
 gui
-  .add(world.plane, "height", 1, 50)
+  .add(world.plane, "height", 1, 500)
   // Invoke a function whenever the value of slider changes
   .onChange(generatePlane);
 
 gui
-  .add(world.plane, "widthSegments", 1, 50)
+  .add(world.plane, "widthSegments", 1, 100)
   // Invoke a function whenever the value of slider changes
   .onChange(generatePlane);
 
 gui
-  .add(world.plane, "heightSegments", 1, 50)
+  .add(world.plane, "heightSegments", 1, 100)
   // Invoke a function whenever the value of slider changes
   .onChange(generatePlane);
 
@@ -45,16 +45,44 @@ function generatePlane() {
     world.plane.widthSegments
   );
 
+  // Randomize vertices
   const { array } = planeMesh.geometry.attributes.position;
-  // Iterate over sets of three coordinates(representing verticies)
+  const randomValues = [];
+  // Iterate over sets of three coordinates(representing verticies)]
   for (let i = 0; i < array.length; i += 3) {
     const x = array[i];
     const y = array[i + 1];
     const z = array[i + 2];
 
+    // Multiply Math.random value to increase randomness
+    array[i] = x + (Math.random() - 0.5) * 3;
+    array[i + 1] = y + (Math.random() - 0.5) * 3;
     // + 2 allows us to access the z coordinate
-    array[i + 2] = z + Math.random();
+    array[i + 2] = z + (Math.random() - 0.5) * 4;
+
+    // to push in 3x the random values for each vertices
+    for (let i = 0; i < 3; i++) {
+      // multiplying by 2pi gives full range of input to sine and cosine
+      randomValues.push(Math.random() * Math.PI * 2);
+    }
   }
+
+  // Set array of random numbers as property value
+  planeMesh.geometry.attributes.position.randomValues = randomValues;
+  // Making new property to track the original coordinates of vertices
+  planeMesh.geometry.attributes.position.originalPosition =
+    planeMesh.geometry.attributes.position.array;
+
+  // const { array } = planeMesh.geometry.attributes.position;
+  // // Iterate over sets of three coordinates(representing verticies)
+  // for (let i = 0; i < array.length; i += 3) {
+  //   const x = array[i];
+  //   const y = array[i + 1];
+  //   const z = array[i + 2];
+
+  //   // + 2 allows us to access the z coordinate
+  //   array[i + 2] = z + Math.random();
+  // }
 
   const colors = [];
   for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
@@ -101,9 +129,16 @@ const mesh = new THREE.Mesh(boxGeometry, material);
 
 // Add mesh to the scene
 scene.add(mesh);
-camera.position.z = 5;
 
-const planeGeometry = new THREE.PlaneGeometry(world.plane.width, world.plane.height, world.plane.widthSegments, world.plane.heightSegments);
+// How far away camera is
+camera.position.z = 100;
+
+const planeGeometry = new THREE.PlaneGeometry(
+  world.plane.width,
+  world.plane.height,
+  world.plane.widthSegments,
+  world.plane.heightSegments
+);
 const planeMaterial =
   new // This is invisible until we add a light to illuminate it
   THREE.MeshPhongMaterial({
@@ -116,33 +151,23 @@ const planeMaterial =
 
 const planeMesh = new THREE.Mesh(planeGeometry, planeMaterial);
 scene.add(planeMesh);
-console.log(planeMesh.geometry.attributes.position.array);
+generatePlane();
 
-const { array } = planeMesh.geometry.attributes.position;
-// Iterate over sets of three coordinates(representing verticies)
-for (let i = 0; i < array.length; i += 3) {
-  const x = array[i];
-  const y = array[i + 1];
-  const z = array[i + 2];
+// // color attribute addition
+// const colors = [];
+// for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
+//   colors.push(0, 0.19, 0.4);
+// }
 
-  // + 2 allows us to access the z coordinate
-  array[i + 2] = z + Math.random();
-}
-
-const colors = [];
-for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-  colors.push(0, 0.19, 0.4);
-}
-
-// BufferAttribute must take Float32
-planeMesh.geometry.setAttribute(
-  "color",
-  new THREE.BufferAttribute(new Float32Array(colors), 3)
-);
+// // BufferAttribute must take Float32
+// planeMesh.geometry.setAttribute(
+//   "color",
+//   new THREE.BufferAttribute(new Float32Array(colors), 3)
+// );
 
 const light = new THREE.DirectionalLight(0xffffff, 1);
-// Where we want to place our light relative to the center of the scene. z value of 1 moves it towards us
-light.position.set(0, 0, 1);
+// Where we want to place our light relative to the center of the scene. z value of 1 moves it towards us. Has big effect on shading
+light.position.set(0, 1, 1);
 scene.add(light);
 
 const backLight = new THREE.DirectionalLight(0xffffff, 1);
@@ -154,19 +179,38 @@ const mouse = {
   y: undefined,
 };
 
+// Represents how many times `animate()` is called
+let frame = 0;
 // Recursive
 function animate() {
   requestAnimationFrame(animate);
   // Still need to call render function to render out our scene
   renderer.render(scene, camera);
+  frame += 0.01;
+
+  // Rotate object in each coordinate
   // mesh.rotation.x += 0.02
   // mesh.rotation.y += 0.02
   // mesh.rotation.z += 0.02
-  // planeMesh.rotation.y += 0.02
-  // planeMesh.rotation.z += 0.02
 
   // Rays are coming from the camera
   raycaster.setFromCamera(mouse, camera);
+
+  const { array, originalPosition, randomValues } =
+    planeMesh.geometry.attributes.position;
+  for (let i = 0; i < array.length; i += 3) {
+    // x
+    array[i] = originalPosition[i] + Math.cos(frame + randomValues[i]) * 0.01;
+    // y
+    array[i + 1] =
+      originalPosition[i + 1] + Math.sin(frame + randomValues[i + 1]) * 0.001;
+    // z
+    array[i + 2] =
+      originalPosition[i + 2] + Math.cos(frame + randomValues[i + 2]) * 0.025;
+  }
+
+  planeMesh.geometry.attributes.position.needsUpdate = true;
+
   // Represents object I'm currently hovering over
   const intersects = raycaster.intersectObject(planeMesh);
   if (intersects.length > 0) {
