@@ -344,7 +344,11 @@ document.getElementById('my-work-btn').
       y: 1000,
       ease: 'power3.in',
       duration: 1.25,
-      delay: 2
+      delay: 2,
+      onComplete: () => {
+        window.location =
+        "https://chriscourses.com/"
+      }
     })
   })
 
