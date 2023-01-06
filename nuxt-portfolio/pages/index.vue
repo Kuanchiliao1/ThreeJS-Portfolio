@@ -3,10 +3,13 @@
   <div>
     <!-- The ref attribute allows us to reference this element: this.$refs.canvas -->
     <canvas ref="canvas"></canvas>
-    <div id="container--intro" class="absolute text-white text-center center-Y center-X">
+    <div id="container--intro" class="absolute text-white text-center center-Y center-X text-shadow">
       <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
       <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
-      <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
+      <div>
+        <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black">View My Work</a>
+        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono rainbow-text">Rainbow Mode</button>
+      </div>
     </div>
   </div>
 </template>
@@ -46,30 +49,57 @@ export default {
       },
     };
 
-    gui
-      .add(world.plane, "width", 1, 500)
-      .onChange(generatePlane);
+    // gui
+    //   .add(world.plane, "width", 1, 500)
+    //   .onChange(generatePlane);
 
-    gui
-      .add(world.plane, "height", 1, 500)
-      .onChange(generatePlane);
+    // gui
+    //   .add(world.plane, "height", 1, 500)
+    //   .onChange(generatePlane);
 
-    gui
-      .add(world.plane, "widthSegments", 1, 100)
-      .onChange(generatePlane);
+    // gui
+    //   .add(world.plane, "widthSegments", 1, 100)
+    //   .onChange(generatePlane);
 
-    gui
-      .add(world.plane, "heightSegments", 1, 100)
-      .onChange(generatePlane);
+    // gui
+    //   .add(world.plane, "heightSegments", 1, 100)
+    //   .onChange(generatePlane);
 
+    let colorsRGB = [0.1, .50, .4];
+    let hoverColorsRGB = [0.1, 0.4, 1];
+    let refreshId
+    
+    const rainbowBtn = document.getElementById("rainbow-btn")
+    rainbowBtn.addEventListener('click', () => {
+      rainbowBtn.classList.toggle('active')
+      
+      if (rainbowBtn.classList.contains("active")) {
+        refreshId = (setInterval(() => {
+        colorsRGB[0] = Math.random() * 2
+        colorsRGB[1] = Math.random() * 2
+        colorsRGB[2] = Math.random() * 2
+        }, 3000));
+        console.log(refreshId)
+      } else {
+        console.log(refreshId)
+        clearInterval(refreshId)
+      }
+      
+
+    });
+
+    document.getElementById("portfolio-description").addEventListener('click', () => {
+      hoverColorsRGB = [0, 1, 1]
+    })
+    
     function generatePlane() {
       planeMesh.geometry.dispose();
       planeMesh.geometry = new PlaneGeometry(
         world.plane.width,
         world.plane.height,
         world.plane.widthSegments,
-        world.plane.widthSegments
-      );
+        world.plane.heightSegments,
+        );
 
       // Randomize vertices
       const { array } = planeMesh.geometry.attributes.position;
@@ -101,7 +131,7 @@ export default {
 
       const colors = [];
       for (let i = 0; i < planeMesh.geometry.attributes.position.count; i++) {
-        colors.push(0, 0.19, 0.4);
+        colors.push(...colorsRGB);
       }
 
       // BufferAttribute must take Float32
@@ -132,10 +162,12 @@ export default {
     // To remove the jagged edges of our shapes
     renderer.setPixelRatio(devicePixelRatio);
 
+    // How far away camera is
+    camera.position.z = 30;
+    camera.position.y = -105;
+
     new OrbitControls(camera, renderer.domElement);
 
-    // How far away camera is
-    camera.position.z = 50;
 
     const planeGeometry = new PlaneGeometry(
       world.plane.width,
@@ -241,14 +273,14 @@ export default {
         // Object { a: 91, b: 102, c: 92 }
 
         const initialColor = {
-          r: 0,
-          g: 0.19,
-          b: 0.4,
+          r: colorsRGB[0],
+          g: colorsRGB[1],
+          b: colorsRGB[2],
         };
         const hoverColor = {
-          r: 0.1,
-          g: 0.5,
-          b: 1,
+          r: hoverColorsRGB[0],
+          g: hoverColorsRGB[1],
+          b: hoverColorsRGB[2],
         };
         // gsap for animation
         gsap.to(hoverColor, {
@@ -300,6 +332,14 @@ export default {
     })
 
     gsap.to('#my-work-btn', {
+      opacity: 1,
+      duration: 2.5,
+      y: 0,
+      delay: 1,
+      ease: 'expo'
+    })
+
+    gsap.to('#rainbow-btn', {
       opacity: 1,
       duration: 2.5,
       y: 0,

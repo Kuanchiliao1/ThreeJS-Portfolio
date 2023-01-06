@@ -24,6 +24,32 @@
     margin: 0;
   }
 
+  .rainbow-text:hover,
+  .active {
+    display: inline-block;
+    background: black;
+    background: linear-gradient(to right, red, orange , yellow, green, blue, indigo, violet);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: rainbow_animation 5s ease-in-out infinite;
+    background-size: 400%;
+  }
+
+  @keyframes rainbow_animation {
+      0%,100% {
+          background-position: 0
+      }
+
+      50% {
+          background-position: 100%
+      }
+  }
+
+  .text-shadow {
+    text-shadow: 0px 5px 10px black;
+  }
+
   .font-exo {
     font-family: 'Exo 2', sans-serif;
   }
@@ -34,12 +60,11 @@
 
   .center-Y {
     top: 50%;
-    transform: translateY(-50%);
   }
 
   .center-X {
     right: 50%;
-    transform: translateX(50%);
+    transform: translateX(50%) translateY(-50%);
   }
 
   .translate-Y-down {
