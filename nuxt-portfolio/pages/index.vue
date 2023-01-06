@@ -37,8 +37,8 @@ import OrbitControls from "orbit-controls-es6"
 
 export default {
   mounted() {
-    const dat = require('dat.gui')
-    const gui = new dat.GUI();
+    // const dat = require('dat.gui')
+    // const gui = new dat.GUI();
     // For adding the properties we want in the GUI
     const world = {
       plane: {
