@@ -1,9 +1,14 @@
 <template>
-  <div id="container--intro" class="absolute text-white text-center center-Y center-X">
-        <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
-        <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
-        <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
-      </div>
+  <!-- This div is here bc we need to have a singular root element inside template for all pages -->
+  <div>
+    <!-- The ref attribute allows us to reference this element: this.$refs.canvas -->
+    <canvas ref="canvas"></canvas>
+    <div id="container--intro" class="absolute text-white text-center center-Y center-X">
+      <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
+      <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
+      <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-grey-800">View My Work</a>
+    </div>
+  </div>
 </template>
 
 <script>
@@ -118,13 +123,14 @@ export default {
       1000
     );
     // Converts 3D to 2D via calculations
-    const renderer = new WebGLRenderer();
+    const renderer = new WebGLRenderer({
+      canvas: this.$refs.canvas
+    });
 
     renderer.setSize(innerWidth, innerHeight);
 
     // To remove the jagged edges of our shapes
     renderer.setPixelRatio(devicePixelRatio);
-    document.body.appendChild(renderer.domElement);
 
     new OrbitControls(camera, renderer.domElement);
 
@@ -327,8 +333,8 @@ export default {
           duration: 1.25,
           delay: 2,
           onComplete: () => {
-            window.location =
-            "https://chriscourses.com/"
+            // router contains: methods to change URL, history, etc
+            this.$router.push('/portfolio')
           }
         })
       })
