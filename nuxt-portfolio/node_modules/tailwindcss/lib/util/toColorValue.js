@@ -1,11 +1,14 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: ()=>toColorValue
-});
+exports.default = toColorValue;
+
+var _lodash = _interopRequireDefault(require("lodash"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function toColorValue(maybeFunction) {
-    return typeof maybeFunction === "function" ? maybeFunction({}) : maybeFunction;
+  return _lodash.default.isFunction(maybeFunction) ? maybeFunction({}) : maybeFunction;
 }

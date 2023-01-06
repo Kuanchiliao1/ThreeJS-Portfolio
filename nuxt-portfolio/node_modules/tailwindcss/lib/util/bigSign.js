@@ -1,11 +1,10 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: ()=>bigSign
-});
+exports.default = bigSign;
+
 function bigSign(bigIntValue) {
-    return (bigIntValue > 0n) - (bigIntValue < 0n);
+  return (bigIntValue > 0n) - (bigIntValue < 0n);
 }

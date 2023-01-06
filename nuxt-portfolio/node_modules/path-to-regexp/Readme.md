@@ -3,10 +3,11 @@
 > Turn a path string such as `/user/:name` into a regular expression.
 
 [![NPM version][npm-image]][npm-url]
-[![NPM downloads][downloads-image]][downloads-url]
-[![Build status][build-image]][build-url]
-[![Build coverage][coverage-image]][coverage-url]
+[![Build status][travis-image]][travis-url]
+[![Test coverage][coveralls-image]][coveralls-url]
+[![Dependency Status][david-image]][david-url]
 [![License][license-image]][license-url]
+[![Downloads][downloads-image]][downloads-url]
 
 ## Installation
 
@@ -25,13 +26,9 @@ const { pathToRegexp, match, parse, compile } = require("path-to-regexp");
 // compile(path)
 ```
 
-### Path to regexp
-
-The `pathToRegexp` function will return a regular expression object based on the provided `path` argument. It accepts the following arguments:
-
 - **path** A string, array of strings, or a regular expression.
-- **keys** _(optional)_ An array to populate with keys found in the path.
-- **options** _(optional)_
+- **keys** An array to populate with keys found in the path.
+- **options**
   - **sensitive** When `true` the regexp will be case sensitive. (default: `false`)
   - **strict** When `true` the regexp won't allow an optional trailing delimiter to match. (default: `false`)
   - **end** When `true` the regexp will match to the end of the string. (default: `true`)
@@ -190,28 +187,11 @@ The `match` function will return a function for transforming paths into paramete
 
 ```js
 // Make sure you consistently `decode` segments.
-const fn = match("/user/:id", { decode: decodeURIComponent });
+const match = match("/user/:id", { decode: decodeURIComponent });
 
-fn("/user/123"); //=> { path: '/user/123', index: 0, params: { id: '123' } }
-fn("/invalid"); //=> false
-fn("/user/caf%C3%A9"); //=> { path: '/user/caf%C3%A9', index: 0, params: { id: 'café' } }
-```
-
-The `match` function can be used to custom match named parameters. For example, this can be used to whitelist a small number of valid paths:
-
-```js
-const urlMatch = match("/users/:id/:tab(home|photos|bio)", {
-  decode: decodeURIComponent,
-});
-
-urlMatch("/users/1234/photos");
-//=> { path: '/users/1234/photos', index: 0, params: { id: '1234', tab: 'photos' } }
-
-urlMatch("/users/1234/bio");
-//=> { path: '/users/1234/bio', index: 0, params: { id: '1234', tab: 'bio' } }
-
-urlMatch("/users/1234/otherstuff");
-//=> false
+match("/user/123"); //=> { path: '/user/123', index: 0, params: { id: '123' } }
+match("/invalid"); //=> false
+match("/user/caf%C3%A9"); //=> { path: '/user/caf%C3%A9', index: 0, params: { id: 'café' } }
 ```
 
 #### Process Pathname
@@ -219,16 +199,16 @@ urlMatch("/users/1234/otherstuff");
 You should make sure variations of the same path match the expected `path`. Here's one possible solution using `encode`:
 
 ```js
-const fn = match("/café", { encode: encodeURI });
+const match = match("/café", { encode: encodeURI, decode: decodeURIComponent });
 
-fn("/caf%C3%A9"); //=> { path: '/caf%C3%A9', index: 0, params: {} }
+match("/user/caf%C3%A9"); //=> { path: '/user/caf%C3%A9', index: 0, params: { id: 'café' } }
 ```
 
-**Note:** [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) encodes paths, so `/café` would be normalized to `/caf%C3%A9` and match in the above example.
+**Note:** [`URL`](https://developer.mozilla.org/en-US/docs/Web/API/URL) automatically encodes pathnames for you.
 
 ##### Alternative Using Normalize
 
-Sometimes you won't have already normalized paths to use, so you could normalize it yourself before matching:
+Sometimes you won't have an already normalized pathname. You can normalize it yourself before processing:
 
 ```js
 /**
@@ -335,19 +315,21 @@ Path-To-RegExp breaks compatibility with Express <= `4.x`:
 
 ## Live Demo
 
-You can see a live demo of this library in use at [express-route-tester](http://forbeslindesay.github.io/express-route-tester/).
+You can see a live demo of this library in use at [express-route-tester](http://forbeslindesay.github.com/express-route-tester/).
 
 ## License
 
 MIT
 
-[npm-image]: https://img.shields.io/npm/v/path-to-regexp
+[npm-image]: https://img.shields.io/npm/v/path-to-regexp.svg?style=flat
 [npm-url]: https://npmjs.org/package/path-to-regexp
-[downloads-image]: https://img.shields.io/npm/dm/path-to-regexp
-[downloads-url]: https://npmjs.org/package/path-to-regexp
-[build-image]: https://img.shields.io/github/workflow/status/pillarjs/path-to-regexp/CI/master
-[build-url]: https://github.com/pillarjs/path-to-regexp/actions/workflows/ci.yml?query=branch%3Amaster
-[coverage-image]: https://img.shields.io/codecov/c/gh/pillarjs/path-to-regexp
-[coverage-url]: https://codecov.io/gh/pillarjs/path-to-regexp
+[travis-image]: https://img.shields.io/travis/pillarjs/path-to-regexp.svg?style=flat
+[travis-url]: https://travis-ci.org/pillarjs/path-to-regexp
+[coveralls-image]: https://img.shields.io/coveralls/pillarjs/path-to-regexp.svg?style=flat
+[coveralls-url]: https://coveralls.io/r/pillarjs/path-to-regexp?branch=master
+[david-image]: http://img.shields.io/david/pillarjs/path-to-regexp.svg?style=flat
+[david-url]: https://david-dm.org/pillarjs/path-to-regexp
 [license-image]: http://img.shields.io/npm/l/path-to-regexp.svg?style=flat
 [license-url]: LICENSE.md
+[downloads-image]: http://img.shields.io/npm/dm/path-to-regexp.svg?style=flat
+[downloads-url]: https://npmjs.org/package/path-to-regexp

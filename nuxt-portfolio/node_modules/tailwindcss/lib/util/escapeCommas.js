@@ -1,11 +1,10 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: ()=>escapeCommas
-});
+exports.default = escapeCommas;
+
 function escapeCommas(className) {
-    return className.replace(/\\,/g, "\\2c ");
+  return className.replace(/\\,/g, '\\2c ');
 }

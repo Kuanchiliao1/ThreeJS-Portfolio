@@ -1,25 +1,36 @@
 "use strict";
+
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
-Object.defineProperty(exports, "default", {
-    enumerable: true,
-    get: ()=>buildMediaQuery
-});
+exports.default = buildMediaQuery;
+
+var _lodash = _interopRequireDefault(require("lodash"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
 function buildMediaQuery(screens) {
-    screens = Array.isArray(screens) ? screens : [
-        screens
-    ];
-    return screens.map((screen)=>{
-        let values = screen.values.map((screen)=>{
-            if (screen.raw !== undefined) {
-                return screen.raw;
-            }
-            return [
-                screen.min && `(min-width: ${screen.min})`,
-                screen.max && `(max-width: ${screen.max})`
-            ].filter(Boolean).join(" and ");
-        });
-        return screen.not ? `not all and ${values}` : values;
-    }).join(", ");
+  if (_lodash.default.isString(screens)) {
+    screens = {
+      min: screens
+    };
+  }
+
+  if (!Array.isArray(screens)) {
+    screens = [screens];
+  }
+
+  return (0, _lodash.default)(screens).map(screen => {
+    if (_lodash.default.has(screen, 'raw')) {
+      return screen.raw;
+    }
+
+    return (0, _lodash.default)(screen).map((value, feature) => {
+      feature = _lodash.default.get({
+        min: 'min-width',
+        max: 'max-width'
+      }, feature, feature);
+      return `(${feature}: ${value})`;
+    }).join(' and ');
+  }).join(', ');
 }

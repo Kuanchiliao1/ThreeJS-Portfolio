@@ -1,17 +1,14 @@
-const { Rule, AtRule } = require('postcss')
 let parser = require('postcss-selector-parser')
 
-/**
- * Run a selector string through postcss-selector-parser
- */
-function parse(rawSelector, rule) {
+function parse (str, rule) {
   let nodes
+  let saver = parser(parsed => {
+    nodes = parsed
+  })
   try {
-    parser(parsed => {
-      nodes = parsed
-    }).processSync(rawSelector)
+    saver.processSync(str)
   } catch (e) {
-    if (rawSelector.includes(':')) {
+    if (str.includes(':')) {
       throw rule ? rule.error('Missed semicolon') : e
     } else {
       throw rule ? rule.error(e.message) : e
@@ -20,27 +17,19 @@ function parse(rawSelector, rule) {
   return nodes.at(0)
 }
 
-/**
- * Replaces the "&" token in a node's selector with the parent selector
- * similar to what SCSS does.
- *
- * Mutates the nodes list
- */
-function interpolateAmpInSelector(nodes, parent) {
+function replace (nodes, parent) {
   let replaced = false
-  nodes.each(node => {
-    if (node.type === 'nesting') {
-      let clonedParent = parent.clone({})
-      if (node.value !== '&') {
-        node.replaceWith(
-          parse(node.value.replace('&', clonedParent.toString()))
-        )
+  nodes.each(i => {
+    if (i.type === 'nesting') {
+      let clonedParent = parent.clone()
+      if (i.value !== '&') {
+        i.replaceWith(parse(i.value.replace('&', clonedParent.toString())))
       } else {
-        node.replaceWith(clonedParent)
+        i.replaceWith(clonedParent)
       }
       replaced = true
-    } else if ('nodes' in node && node.nodes) {
-      if (interpolateAmpInSelector(node, parent)) {
+    } else if (i.nodes) {
+      if (replace(i, parent)) {
         replaced = true
       }
     }
@@ -48,60 +37,51 @@ function interpolateAmpInSelector(nodes, parent) {
   return replaced
 }
 
-/**
- * Combines parent and child selectors, in a SCSS-like way
- */
-function mergeSelectors(parent, child) {
-  let merged = []
-  parent.selectors.forEach(sel => {
-    let parentNode = parse(sel, parent)
+function selectors (parent, child) {
+  let result = []
+  parent.selectors.forEach(i => {
+    let parentNode = parse(i, parent)
 
-    child.selectors.forEach(selector => {
-      if (!selector) {
-        return
+    child.selectors.forEach(j => {
+      if (j.length) {
+        let node = parse(j, child)
+        let replaced = replace(node, parentNode)
+        if (!replaced) {
+          node.prepend(parser.combinator({ value: ' ' }))
+          node.prepend(parentNode.clone())
+        }
+        result.push(node.toString())
       }
-      let node = parse(selector, child)
-      let replaced = interpolateAmpInSelector(node, parentNode)
-      if (!replaced) {
-        node.prepend(parser.combinator({ value: ' ' }))
-        node.prepend(parentNode.clone({}))
-      }
-      merged.push(node.toString())
     })
   })
-  return merged
+  return result
 }
 
-/**
- * Move a child and its preceeding comment(s) to after "after"
- */
-function breakOut(child, after) {
-  let prev = child.prev()
-  after.after(child)
-  while (prev && prev.type === 'comment') {
-    let nextPrev = prev.prev()
-    after.after(prev)
-    prev = nextPrev
+function pickComment (comment, after) {
+  if (comment && comment.type === 'comment') {
+    after.after(comment)
+    return comment
+  } else {
+    return after
   }
-  return child
 }
 
-function createFnAtruleChilds(bubble) {
-  return function atruleChilds(rule, atrule, bubbling, mergeSels = bubbling) {
+function createFnAtruleChilds (bubble) {
+  return function atruleChilds (rule, atrule, bubbling) {
     let children = []
     atrule.each(child => {
-      if (child.type === 'rule' && bubbling) {
-        if (mergeSels) {
-          child.selectors = mergeSelectors(rule, child)
-        }
-      } else if (child.type === 'atrule' && child.nodes) {
-        if (bubble[child.name]) {
-          atruleChilds(rule, child, mergeSels)
-        } else if (atrule[rootRuleMergeSel] !== false) {
+      if (child.type === 'comment') {
+        children.push(child)
+      } else if (child.type === 'decl') {
+        children.push(child)
+      } else if (child.type === 'rule' && bubbling) {
+        child.selectors = selectors(rule, child)
+      } else if (child.type === 'atrule') {
+        if (child.nodes && bubble[child.name]) {
+          atruleChilds(rule, child, true)
+        } else {
           children.push(child)
         }
-      } else {
-        children.push(child)
       }
     })
     if (bubbling) {
@@ -116,159 +96,36 @@ function createFnAtruleChilds(bubble) {
   }
 }
 
-function pickDeclarations(selector, declarations, after) {
+function pickDeclarations (selector, declarations, after, Rule) {
   let parent = new Rule({
     selector,
     nodes: []
   })
-  parent.append(declarations)
+
+  for (let declaration of declarations) {
+    parent.append(declaration)
+  }
+
   after.after(parent)
   return parent
 }
 
-function atruleNames(defaults, custom) {
+function atruleNames (defaults, custom) {
   let list = {}
-  for (let name of defaults) {
-    list[name] = true
+  for (let i of defaults) {
+    list[i] = true
   }
   if (custom) {
-    for (let name of custom) {
-      list[name.replace(/^@/, '')] = true
+    for (let i of custom) {
+      let name = i.replace(/^@/, '')
+      list[name] = true
     }
   }
   return list
 }
 
-function parseRootRuleParams(params) {
-  params = params.trim()
-  let braceBlock = params.match(/^\((.*)\)$/)
-  if (!braceBlock) {
-    return { type: 'basic', selector: params }
-  }
-  let bits = braceBlock[1].match(/^(with(?:out)?):(.+)$/)
-  if (bits) {
-    let allowlist = bits[1] === 'with'
-    let rules = Object.fromEntries(
-      bits[2]
-        .trim()
-        .split(/\s+/)
-        .map(name => [name, true])
-    )
-    if (allowlist && rules.all) {
-      return { type: 'noop' }
-    }
-    let escapes = rule => !!rules[rule]
-    if (rules.all) {
-      escapes = () => true
-    } else if (allowlist) {
-      escapes = rule => (rule === 'all' ? false : !rules[rule])
-    }
-
-    return {
-      type: 'withrules',
-      escapes
-    }
-  }
-  // Unrecognized brace block
-  return { type: 'unknown' }
-}
-
-function getAncestorRules(leaf) {
-  let lineage = []
-  let parent = leaf.parent
-
-  while (parent && parent instanceof AtRule) {
-    lineage.push(parent)
-    parent = parent.parent
-  }
-  return lineage
-}
-
-function unwrapRootRule(rule) {
-  let escapes = rule[rootRuleEscapes]
-
-  if (!escapes) {
-    rule.after(rule.nodes)
-  } else {
-    let nodes = rule.nodes
-
-    let topEscaped
-    let topEscapedIdx = -1
-    let breakoutLeaf
-    let breakoutRoot
-    let clone
-
-    let lineage = getAncestorRules(rule)
-    lineage.forEach((parent, i) => {
-      if (escapes(parent.name)) {
-        topEscaped = parent
-        topEscapedIdx = i
-        breakoutRoot = clone
-      } else {
-        let oldClone = clone
-        clone = parent.clone({ nodes: [] })
-        oldClone && clone.append(oldClone)
-        breakoutLeaf = breakoutLeaf || clone
-      }
-    })
-
-    if (!topEscaped) {
-      rule.after(nodes)
-    } else if (!breakoutRoot) {
-      topEscaped.after(nodes)
-    } else {
-      let leaf = breakoutLeaf
-      leaf.append(nodes)
-      topEscaped.after(breakoutRoot)
-    }
-
-    if (rule.next() && topEscaped) {
-      let restRoot
-      lineage.slice(0, topEscapedIdx + 1).forEach((parent, i, arr) => {
-        let oldRoot = restRoot
-        restRoot = parent.clone({ nodes: [] })
-        oldRoot && restRoot.append(oldRoot)
-
-        let nextSibs = []
-        let _child = arr[i - 1] || rule
-        let next = _child.next()
-        while (next) {
-          nextSibs.push(next)
-          next = next.next()
-        }
-        restRoot.append(nextSibs)
-      })
-      restRoot && (breakoutRoot || nodes[nodes.length - 1]).after(restRoot)
-    }
-  }
-
-  rule.remove()
-}
-
-const rootRuleMergeSel = Symbol('rootRuleMergeSel')
-const rootRuleEscapes = Symbol('rootRuleEscapes')
-
-function normalizeRootRule(rule) {
-  let { params } = rule
-  let { type, selector, escapes } = parseRootRuleParams(params)
-  if (type === 'unknown') {
-    throw rule.error(
-      `Unknown @${rule.name} parameter ${JSON.stringify(params)}`
-    )
-  }
-  if (type === 'basic' && selector) {
-    let selectorBlock = new Rule({ selector, nodes: rule.nodes })
-    rule.removeAll()
-    rule.append(selectorBlock)
-  }
-  rule[rootRuleEscapes] = escapes
-  rule[rootRuleMergeSel] = escapes ? !escapes('all') : type === 'noop'
-}
-
-const hasRootRule = Symbol('hasRootRule')
-
 module.exports = (opts = {}) => {
-  let bubble = atruleNames(['media', 'supports', 'layer'], opts.bubble)
+  let bubble = atruleNames(['media', 'supports'], opts.bubble)
   let atruleChilds = createFnAtruleChilds(bubble)
   let unwrap = atruleNames(
     [
@@ -280,20 +137,11 @@ module.exports = (opts = {}) => {
     ],
     opts.unwrap
   )
-  let rootRuleName = (opts.rootRuleName || 'at-root').replace(/^@/, '')
   let preserveEmpty = opts.preserveEmpty
 
   return {
     postcssPlugin: 'postcss-nested',
-
-    Once(root) {
-      root.walkAtRules(rootRuleName, node => {
-        normalizeRootRule(node)
-        root[hasRootRule] = true
-      })
-    },
-
-    Rule(rule) {
+    Rule (rule, { Rule }) {
       let unwrapped = false
       let after = rule
       let copyDeclarations = false
@@ -302,33 +150,48 @@ module.exports = (opts = {}) => {
       rule.each(child => {
         if (child.type === 'rule') {
           if (declarations.length) {
-            after = pickDeclarations(rule.selector, declarations, after)
+            after = pickDeclarations(rule.selector, declarations, after, Rule)
             declarations = []
           }
 
           copyDeclarations = true
           unwrapped = true
-          child.selectors = mergeSelectors(rule, child)
-          after = breakOut(child, after)
+          child.selectors = selectors(rule, child)
+          after = pickComment(child.prev(), after)
+          after.after(child)
+          after = child
         } else if (child.type === 'atrule') {
           if (declarations.length) {
-            after = pickDeclarations(rule.selector, declarations, after)
+            after = pickDeclarations(rule.selector, declarations, after, Rule)
             declarations = []
           }
-          if (child.name === rootRuleName) {
+
+          if (child.name === 'at-root') {
             unwrapped = true
-            atruleChilds(rule, child, true, child[rootRuleMergeSel])
-            after = breakOut(child, after)
+            atruleChilds(rule, child, false)
+
+            let nodes = child.nodes
+            if (child.params) {
+              nodes = new Rule({ selector: child.params, nodes })
+            }
+
+            after.after(nodes)
+            after = nodes
+            child.remove()
           } else if (bubble[child.name]) {
             copyDeclarations = true
             unwrapped = true
             atruleChilds(rule, child, true)
-            after = breakOut(child, after)
+            after = pickComment(child.prev(), after)
+            after.after(child)
+            after = child
           } else if (unwrap[child.name]) {
             copyDeclarations = true
             unwrapped = true
             atruleChilds(rule, child, false)
-            after = breakOut(child, after)
+            after = pickComment(child.prev(), after)
+            after.after(child)
+            after = child
           } else if (copyDeclarations) {
             declarations.push(child)
           }
@@ -338,19 +201,12 @@ module.exports = (opts = {}) => {
       })
 
       if (declarations.length) {
-        after = pickDeclarations(rule.selector, declarations, after)
+        after = pickDeclarations(rule.selector, declarations, after, Rule)
       }
 
       if (unwrapped && preserveEmpty !== true) {
         rule.raws.semicolon = true
         if (rule.nodes.length === 0) rule.remove()
-      }
-    },
-
-    RootExit(root) {
-      if (root[hasRootRule]) {
-        root.walkAtRules(rootRuleName, unwrapRootRule)
-        root[hasRootRule] = false
       }
     }
   }

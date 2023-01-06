@@ -1,2 +1,12 @@
-let nesting = require('../lib/postcss-plugins/nesting')
-module.exports = (nesting.__esModule ? nesting : { default: nesting }).default
+let nesting = require('./plugin')
+
+module.exports = (opts) => {
+  return {
+    postcssPlugin: 'tailwindcss/nesting',
+    Once(root, { result }) {
+      return nesting(opts)(root, result)
+    },
+  }
+}
+
+module.exports.postcss = true
