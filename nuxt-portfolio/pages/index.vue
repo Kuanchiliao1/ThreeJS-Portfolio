@@ -344,31 +344,5 @@ export default {
 }
 </script>
 
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@1,700&family=Space+Mono&display=swap');
-  body {
-    margin: 0px;
-  }
 
-  .font-exo {
-    font-family: 'Exo 2', sans-serif;
-  }
-
-  .font-mono {
-    font-family: 'Space Mono', monospace;
-  }
-
-  .center-Y {
-    top: 50%;
-    transform: translateY(-50%);
-  }
-
-  .center-X {
-    right: 50%;
-    transform: translateX(50%);
-  }
-
-  .translate-Y-down {
-    transform: translateY(2em)
-  }
-</style>
+<style></style>
