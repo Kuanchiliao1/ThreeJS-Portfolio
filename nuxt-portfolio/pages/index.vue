@@ -8,7 +8,7 @@
       <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
       <div>
         <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black">View My Work</a>
-        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono rainbow-text">Rainbow Mode</button>
+        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono rainbow-text hover:bg-white">Rainbow Mode</button>
       </div>
     </div>
   </div>
@@ -74,18 +74,25 @@ export default {
       rainbowBtn.classList.toggle('active')
       
       if (rainbowBtn.classList.contains("active")) {
-        refreshId = (setInterval(() => {
+        setColorsRgb()
+        refreshId = (setInterval(setColorsRgb, 3000));
+        rainbowBtn.style.background = ""
+        rainbowBtn.style.color = ""
+      } else {
+        clearInterval(refreshId)
+        setBtnRgb()
+      }
+      
+      function setColorsRgb() {
         colorsRGB[0] = Math.random() * 2
         colorsRGB[1] = Math.random() * 2
         colorsRGB[2] = Math.random() * 2
-        }, 3000));
-        console.log(refreshId)
-      } else {
-        console.log(refreshId)
-        clearInterval(refreshId)
       }
-      
 
+      function setBtnRgb() {
+        rainbowBtn.style.color = `rgb(${colorsRGB[0] * 100}, ${colorsRGB[1] * 100}, ${colorsRGB[2] * 100})`
+        rainbowBtn.style.background = "black"
+      }
     });
 
     document.getElementById("portfolio-description").addEventListener('click', () => {
