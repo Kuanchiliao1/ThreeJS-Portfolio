@@ -3,6 +3,7 @@
   <div>
     <!-- The ref attribute allows us to reference this element: this.$refs.canvas -->
     <canvas ref="canvas"></canvas>
+    <a class="skip-to-projects" href="/portfolio">Skip to Projects</a>
     <div id="container--intro" class="absolute text-white text-center center-Y center-X text-shadow">
       <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
       <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>

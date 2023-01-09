@@ -43,6 +43,23 @@
     filter: brightness(40%);
   }
 
+  /* Taken from space tourism */
+  .skip-to-projects {
+    position: absolute;
+    z-index: 9999;
+    top: 0;
+    background: black;
+    color: white;
+    padding: .5em 1em;
+    margin-inline: auto;
+    transform: translateY(-100%);
+    transition: transform 250ms ease-in;
+  }
+
+  .skip-to-projects:focus {
+    transform: translateY(0);
+  }
+
   .background-img-header::after {
   content: "";
   position: absolute;
