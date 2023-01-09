@@ -5,6 +5,8 @@
 </template>
 
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Oswald:wght@400;700&display=swap');
+
   html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, 'Helvetica Neue', Arial, sans-serif;
@@ -22,7 +24,15 @@
   *::after {
     box-sizing: border-box;
     margin: 0;
-    border-color: hsl(0, 0%, 10% / .25);
+    border-color: rgba(255, 255, 255, 0.40);
+  }
+
+  .body-container--portfolio {
+    font-family: 'Lato', sans-serif;
+  }
+
+  .title-text {
+    font-family: 'Oswald', sans-serif;
   }
 
   .background-img-header {
@@ -30,6 +40,7 @@
     background-image: url("../static/DJI_0667.JPG");
     background-size: cover;
     background-position: right top;
+    filter: brightness(40%);
   }
 
   .background-img-header::after {
@@ -41,7 +52,7 @@
   border-width: 0 0 100px 100vw;
   border-color: transparent transparent #ffffff transparent;
   z-index: 100;
-}
+  }
 
   .rainbow-text:hover,
   .active {
