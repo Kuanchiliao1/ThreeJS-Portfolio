@@ -22,7 +22,26 @@
   *::after {
     box-sizing: border-box;
     margin: 0;
+    border-color: hsl(0, 0%, 10% / .25);
   }
+
+  .background-img-header {
+    position: relative;
+    background-image: url("../static/DJI_0667.JPG");
+    background-size: cover;
+    background-position: right top;
+  }
+
+  .background-img-header::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0 0 100px 100vw;
+  border-color: transparent transparent #ffffff transparent;
+  z-index: 100;
+}
 
   .rainbow-text:hover,
   .active {
