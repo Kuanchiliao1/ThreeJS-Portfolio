@@ -60,7 +60,7 @@
     background-image: url("../static/edited_background_pic.png");
     background-size: cover;
     background-attachment: fixed;
-    background-position:  right;
+    background-position: 100% 100%;
     animation: fadein 0.7s ease-in;
     animation-fill-mode: forwards;
     opacity: 0;
@@ -82,6 +82,10 @@
     z-index: 100;
   }
 
+  .vsc-controller {
+    display: none;
+  }
+
   .rainbow-text:hover,
   .active {
     display: inline-block;
@@ -96,11 +100,11 @@
 
   @keyframes rainbow_animation {
     0%,100% {
-        background-position: 0
+        background-position: 0;
     }
 
     50% {
-        background-position: 100%
+        background-position: 100%;
     }
   }
 
