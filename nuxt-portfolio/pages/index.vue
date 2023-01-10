@@ -6,10 +6,10 @@
     <a class="skip-to-projects" href="/portfolio">Skip to Projects</a>
     <div id="container--intro" class="absolute text-white text-center center-Y center-X text-shadow">
       <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
-      <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
+      <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo font-size-title">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
       <div>
-        <a id="my-work-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black">View My Work</a>
-        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border px-4 py-2 rounded-lg text-sm font-mono rainbow-text hover:bg-white">Rainbow Mode</button>
+        <a tabindex="0" id="my-work-btn" class="cursor-pointer translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black">View My Work</a>
+        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono rainbow-text hover:bg-white">Rainbow Mode</button>
       </div>
     </div>
   </div>
@@ -66,8 +66,10 @@ export default {
     //   .add(world.plane, "heightSegments", 1, 100)
     //   .onChange(generatePlane);
 
-    let colorsRGB = [0.1, .50, .4];
-    let hoverColorsRGB = [0.1, 0.4, 1];
+    // let colorsRGB = [0.1, .50, .4];
+    let colorsRGB = [.6, 0.06, .1] // ruby red
+    let hoverColorsRGB = [0.1, 0.4, 1]; // light-blue
+    hoverColorsRGB = [2.54, 0.4, 1]; // light-ruby
     let refreshId
     
     const rainbowBtn = document.getElementById("rainbow-btn")

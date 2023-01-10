@@ -1,1 +1,0 @@
-{"version":3,"file":"composables.9765aa3c.js","sources":["../../../../node_modules/nuxt/dist/head/runtime/composables.mjs"],"sourcesContent":["import { useNuxtApp } from \"#app\";\nexport function useHead(input, options) {\n  return useNuxtApp()._useHead(input, options);\n}\n"],"names":[],"mappings":";;;AACO,SAAS,QAAQ,OAAO,SAAS;AACtC,SAAO,WAAU,EAAG,SAAS,OAAO,OAAO;AAC7C;"}

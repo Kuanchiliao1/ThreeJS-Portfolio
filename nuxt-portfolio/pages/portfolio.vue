@@ -1,5 +1,5 @@
 <template>
-  <div class="body-container--portfolio h-screen border-white text-white">
+  <div class="bg-black body-container--portfolio h-screen border-white text-white">
     <header class="background-img-header pb-64">
       <nav>
         <div class="flex justify-between border-b uppercase tracking-wide">
@@ -22,14 +22,14 @@
       </section>
     </header>
     <main class="text-black mx-auto max-w-4xl">
-      <section class="flex flex-col py-8 px-12 mx-auto max-w-4xl text-center">
+      <section class="bg-white flex flex-col py-8 px-12 mx-auto max-w-4xl text-center">
         <h2 class="uppercase bold border-b pb-3">My Projects</h2>
         <div class="flex flex-col">
           <h3 class="mt-4">Autohotkey Script collection</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start">
             <img class="block w-full md:w-5/12 self-start" src="https://i.imgur.com/jCXCdvw.jpeg" alt="########">
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>Autohotkey is my first language, and it allows for the creation of custom scripts to automate tasks and improve their workflow on Windows computers. I have been lightly working on this project since 2019 and have compiled a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look and see what you can do with Autohotkey!</p>
+              <p>Autohotkey is what got me hooked on coding in 2019. It allows for the creation of custom scripts to automate tasks and improve their workflow on Windows computers. I have compiled and wrote a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look and see what you can do with Autohotkey!</p>
               <h4>
                 Cool features:
               </h4>

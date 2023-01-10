@@ -1,5 +1,6 @@
-# Three.js Portfolio Landing Page
+# Three.js Portfolio Landing Page + Main page
 **[Live site](https://tony-portofolio.netlify.app/)**
+*Note: Main page in progress!*
 
 This is a portfolio landing page I built for fun as an intro into several new topics for me. Originally made by Chris Lis, but I used different solutions and put a lot of fun twists on it, my favorite by far being Rainbow Mode. Hope you enjoy drawing with it as much as I did :)
 

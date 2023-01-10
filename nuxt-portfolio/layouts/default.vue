@@ -35,13 +35,7 @@
     font-family: 'Oswald', sans-serif;
   }
 
-  .background-img-header {
-    position: relative;
-    background-image: url("../static/DJI_0667.JPG");
-    background-size: cover;
-    background-position: right top;
-    filter: brightness(40%);
-  }
+
 
   /* Taken from space tourism */
   .skip-to-projects {
@@ -54,21 +48,38 @@
     margin-inline: auto;
     transform: translateY(-100%);
     transition: transform 250ms ease-in;
+    text-decoration: underline;
   }
 
   .skip-to-projects:focus {
     transform: translateY(0);
   }
 
+  .background-img-header {
+    position: relative;
+    background-image: url("../static/edited_background_pic.png");
+    background-size: cover;
+    background-attachment: fixed;
+    background-position:  right;
+    animation: fadein 0.7s ease-in;
+    animation-fill-mode: forwards;
+    opacity: 0;
+  }
+
+  @keyframes fadein {
+    from { opacity: .0; }
+    to   { opacity: 1; }
+  }
+
   .background-img-header::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  right: 0;
-  border-style: solid;
-  border-width: 0 0 100px 100vw;
-  border-color: transparent transparent #ffffff transparent;
-  z-index: 100;
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-style: solid;
+    border-width: 0 0 100px 100vw;
+    border-color: transparent transparent #ffffff transparent;
+    z-index: 100;
   }
 
   .rainbow-text:hover,
@@ -84,13 +95,13 @@
   }
 
   @keyframes rainbow_animation {
-      0%,100% {
-          background-position: 0
-      }
+    0%,100% {
+        background-position: 0
+    }
 
-      50% {
-          background-position: 100%
-      }
+    50% {
+        background-position: 100%
+    }
   }
 
   .text-shadow {
@@ -103,6 +114,10 @@
 
   .font-mono {
     font-family: 'Space Mono', monospace;
+  }
+
+  .font-size-title {
+    font-size: clamp(1.5rem, 1.179rem + 1.468vw, 2.5rem);
   }
 
   .center-Y {
