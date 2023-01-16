@@ -7,7 +7,7 @@
           <p class="self-center pl-7 font-bold tracking-widest">Tony Liao</p>
           <ul class="right-nav flex">
             <li><a class="py-5 px-7 border-l inline-block" href="#projects">Projects</a></li>
-            <li><a class="py-5 px-7 border-l inline-block" href="">Contact</a></li>
+            <!-- <li><a class="py-5 px-7 border-l inline-block" href="">Contact</a></li> -->
           </ul>
         </div>
       </nav>
@@ -19,19 +19,19 @@
         </p>
         <br>
         <p>
-          Outside of work, I thouroughly enjoy exploring my creative side through drone photography, playing the piano, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
+          Outside of work, I thoroughly enjoy exploring my creative side through drone photography, playing the piano, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
-          <a href="../static/_Tony_Liao_resume_Two_Barrels.pdf" download="newfilename" class="py-3 px-5 border-1 uppercase border">Résumé</a>
+          <a href="https://docs.google.com/document/d/1MxTmh9R64VNeEOTGRiA8KHy7jqXS2yAhPC9Jmh3jXrY/edit?usp=sharing" class="py-3 px-5 border-1 uppercase border">Résumé</a>
           <a href="https://github.com/Kuanchiliao1" class="py-3 px-5 border-1 uppercase border">Github</a>
         </div>
       </section>
     </header>
     <main id="projects" class="bg-white text-black mx-auto max-w-4xl">
       <section class="flex flex-col py-8 px-12 mx-auto max-w-4xl text-center">
-        <h2 class="uppercase bold border-b pb-3 text-3xl">My Projects</h2>
-        <div class="flex flex-col">
-          <h3 class="text-2xl my-4">Autohotkey Script Collection</h3>
+        <h2 class="uppercase font-bold border-b pb-8 text-3xl border-black title-text">My Projects</h2>
+        <div class="flex flex-col items-center">
+          <h3 class="text-2xl pb-4 mb-6 mt-8 border-b border-black w-4/5">Autohotkey Script Collection</h3>
           <div class="flex items-start flex-row flex-wrap justify-between gap-0.5 text-start">
             <!-- <img class="pt-1 block w-full md:w-5/12 self-start" src="https://i.imgur.com/FCuosDc.jpeg" alt="########"> -->
             <div class="mb-5 flex flex-col pt-1 w-full md:w-5/12 text-start">
@@ -46,7 +46,7 @@
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
               <p>Autohotkey is what first got me hooked on coding in 2019. It allows for the creation of custom scripts to automate tasks and improve their workflow on Windows computers. I have compiled and wrote a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look and see what you can do with Autohotkey!</p>
-              <h4 class="mt-4">
+              <h4 class="mt-4 font-bold">
                 Features
               </h4>
               <ul>
@@ -54,12 +54,12 @@
                 <li>rem/px conversion</li>
                 <li>A.I. analyzer</li>
               </ul>
-              <p class="mt-4">Technologies used: Autohotkey, OpenAI API</p>
+              <p class="mt-4 font-bold">Technologies used: Autohotkey, OpenAI API</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col">
-          <h3 class="text-2xl my-4">Portfolio Landing Page</h3>
+        <div class="flex flex-col items-center">
+          <h3 class="text-2xl pb-4 mb-6 mt-8 border-b border-black w-4/5">Portfolio Landing Page</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start m-0">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/FCuosDc.jpeg" alt="Portfolio Landing Page">
@@ -70,7 +70,7 @@
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
               <p>If you can't tell, this websites sole purpose is to look cool and be a bit over the top. It's essentially a colorful 3D drawing board that you can control with your mouse. I built this portfolio landing page as an introduction to Three.js and Vue.js. While originally created by Chris Lis, I added some of my own twists on solutions and made improvements. I'm most proud of a feature I implemented called Rainbow Mode.</p>
-              <h4 class="mt-4">
+              <h4 class="mt-4 font-bold">
                 Features
               </h4>
               <ul>
@@ -78,12 +78,12 @@
                 <li>Skip to content for accessibility</li>
                 <li>Orbit controls with mouse</li>
               </ul>
-              <p class="mt-4">Technologies used: HTML/CSS/JS, Nuxt.js, Vite, Three.js, Tailwind</p>
+              <p class="mt-4 font-bold">Technologies used: HTML/CSS/JS, Nuxt.js, Vite, Three.js, Tailwind</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col">
-          <h3 class="text-2xl my-4">Space Tourism</h3>
+        <div class="flex flex-col items-center">
+          <h3 class="text-2xl pb-4 mb-6 mt-8 border-b border-black w-4/5">Space Tourism</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/MQbYl2j.jpeg" alt="Space Tourism Homepage">
@@ -103,12 +103,12 @@
                 <li>Animated button</li>
                 <li>Fun space facts</li>
               </ul>
-              <p class="mt-4">Technologies used: HTML/CSS/JS, Github Pages, Figma</p>
+              <p class="mt-4 font-bold">Technologies used: HTML/CSS/JS, Github Pages, Figma</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col">
-          <h3 class="text-2xl my-4">What to Say</h3>
+        <div class="flex flex-col items-center">
+          <h3 class="text-2xl pb-4 mb-6 mt-8 border-b border-black w-4/5">What to Say</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/6LjHvea.jpeg" alt="What to Say homepage">
@@ -127,12 +127,12 @@
                 <li>Multiple simultaneous validations of Entry inputs</li>
                 <li>A.I. generated rated responses coming soon!</li>
               </ul>
-              <p class="mt-4">Technologies used: Ruby, Sinatra, PSQL, Heroku, HTML/CSS</p>
+              <p class="mt-4 font-bold">Technologies used: Ruby, Sinatra, PSQL, Heroku, HTML/CSS</p>
             </div>
           </div>
         </div>
-        <div class="flex flex-col">
-          <h3 class="text-2xl my-4">Rec Analyzer</h3>
+        <div class="flex flex-col items-center">
+          <h3 class="text-2xl pb-4 mb-6 mt-8 border-b border-black w-4/5">Rec Analyzer</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/mQQwg6k.jpeg" alt="Rec Analyzer homepage">
@@ -152,7 +152,7 @@
                 <li>Google authentication</li>
                 <li>Place to rate your friends</li>
               </ul>
-              <p class="mt-4">Technologies used: Ruby, Sinatra, PSQL, Figma, SCSS, JQuery</p>
+              <p class="mt-4 font-bold">Technologies used: Ruby, Sinatra, PSQL, Figma, SCSS, JQuery</p>
             </div>
           </div>
         </div>
