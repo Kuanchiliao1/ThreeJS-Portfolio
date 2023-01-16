@@ -1,5 +1,6 @@
 <template>
   <div class="body-container--portfolio h-screen border-white text-white">
+  <div class="fade-in-page" v-bind:class="{ 'fade-out': isLoaded }"></div>
     <header class="background-img-header pb-64">
       <nav>
         <div class="flex justify-between border-b uppercase tracking-wide">
@@ -21,7 +22,7 @@
           Outside of work, I thouroughly enjoy exploring my creative side through drone photography, playing the piano, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
-          <a href="../static/_Tony_Liao_resume_Two_Barrels.pdf" class="py-3 px-5 border-1 uppercase border">Résumé</a>
+          <a href="../static/_Tony_Liao_resume_Two_Barrels.pdf" download="newfilename" class="py-3 px-5 border-1 uppercase border">Résumé</a>
           <a href="https://github.com/Kuanchiliao1" class="py-3 px-5 border-1 uppercase border">Github</a>
         </div>
       </section>
@@ -30,10 +31,9 @@
       <section class="flex flex-col py-8 px-12 mx-auto max-w-4xl text-center">
         <h2 class="uppercase bold border-b pb-3 text-3xl">My Projects</h2>
         <div class="flex flex-col">
-          <h3 class="text-2xl my-4">Autohotkey Script collection</h3>
+          <h3 class="text-2xl my-4">Autohotkey Script Collection</h3>
           <div class="flex items-start flex-row flex-wrap justify-between gap-0.5 text-start">
             <!-- <img class="pt-1 block w-full md:w-5/12 self-start" src="https://i.imgur.com/FCuosDc.jpeg" alt="########"> -->
-
             <div class="mb-5 flex flex-col pt-1 w-full md:w-5/12 text-start">
               <video controls class="" style="font-size: 0;">
                 <source src="../static/explorer_fEphgDsVbN.mp4"
@@ -192,3 +192,16 @@
     </main>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      isLoaded: false
+    }
+  },
+  mounted() {
+    this.isLoaded = true
+  }
+}
+</script>

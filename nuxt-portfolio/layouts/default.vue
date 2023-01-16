@@ -35,7 +35,29 @@
     font-family: 'Oswald', sans-serif;
   }
 
+  .fade-in-page {
+      position: fixed;
+      background: black;
+      z-index: 100000;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      right: 0;
+  }
 
+  .fade-out {
+    animation: fade 2s ease-in forwards;
+  }
+
+  @keyframes fade {
+    0% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0;
+      visibility: hidden;
+    } 
+  }
 
   /* Taken from space tourism */
   .skip-to-projects {
