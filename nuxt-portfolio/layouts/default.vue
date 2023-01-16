@@ -5,18 +5,18 @@
 </template>
 
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@900&family=Oswald:wght@400;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&family=Oswald:wght@400;700&display=swap');
 
   html {
     font-family: 'Source Sans Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI',
       Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     word-spacing: 1px;
+    scroll-behavior: smooth;
     -ms-text-size-adjust: 100%;
     -webkit-text-size-adjust: 100%;
     -moz-osx-font-smoothing: grayscale;
     -webkit-font-smoothing: antialiased;
-    box-sizing: border-box;
   }
 
   *,
@@ -88,12 +88,22 @@
     opacity: 0;
   }
 
+  .contact-background {
+    position: relative;
+    background-image: url(../static/DJI_0104.JPG);
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: right;
+    height: 67rem;
+  }
+
   @keyframes fadein {
     from { opacity: .0; }
     to   { opacity: 1; }
   }
 
-  .background-img-header::after {
+  .background-img-header::after,
+  .contact-background::before {
     content: "";
     position: absolute;
     bottom: 0;
@@ -102,6 +112,13 @@
     border-width: 0 0 100px 100vw;
     border-color: transparent transparent #ffffff transparent;
     z-index: 100;
+  }
+
+  .contact-background::before {
+    top: 0;
+    bottom: auto;
+    border-width: 0px 0px 100px 100vw;
+    transform: rotate(180deg)
   }
 
   .vsc-controller {
