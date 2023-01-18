@@ -64,7 +64,7 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/FCuosDc.jpeg" alt="Portfolio Landing Page">
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://tony-portofolio.netlify.app/">Live site</a>
+                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
                 <a class="btn bg-black text-white inline-block w-1/2 hover:bg-white hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
               </div>
             </div>
@@ -159,7 +159,7 @@
       </section>
     </main>
     <footer id="contact">
-        <div class="flex contact-background pt-64 flex-col items-center mt-16">
+        <div class="flex contact-background pt-64 flex-col items-center mt-16 px-12">
           <h2 class="uppercase font-bold pb-8 text-3xl title-text mt-32 pt-64">Contact Me</h2>
           <form class="w-full max-w-lg mx-auto" action="https://formsubmit.co/490cf4a56b9daae8a2c33c82ffe923bc" method="POST">
             <div class="flex flex-wrap -mx-3 mb-6">
