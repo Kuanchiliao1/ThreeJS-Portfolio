@@ -176,4 +176,10 @@
   .translate-Y-down {
     transform: translateY(2em);
   }
+
+  @media (min-width: 760px) {
+    html {
+      background-color: white;
+    }
+  }
 </style>
