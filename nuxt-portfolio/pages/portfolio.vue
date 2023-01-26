@@ -161,7 +161,7 @@
     <footer id="contact">
         <div class="flex contact-background pt-64 flex-col items-center px-12">
           <h2 class="uppercase font-bold pb-8 text-3xl title-text mt-32 pt-64">Contact Me</h2>
-          <form class="w-full max-w-lg mx-auto" action="https://public.herotofu.com/v1/80f86470-9d20-11ed-82c7-3d7607318e65" method="POST">
+          <form ref="form" @submit.prevent="onSubmit" class="w-full max-w-lg mx-auto" action="https://public.herotofu.com/v1/80f86470-9d20-11ed-82c7-3d7607318e65" method="POST">
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="name">
@@ -208,6 +208,14 @@ export default {
   },
   mounted() {
     this.isLoaded = true
+  },
+  methods: {
+    onSubmit(event) {
+      if (event.target.checkValidity()) {
+        this.$refs.form.reset()
+        this.$refs.form.submit()
+      }
+    }
   }
 }
 </script>
