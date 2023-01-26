@@ -212,8 +212,8 @@ export default {
   methods: {
     onSubmit(event) {
       if (event.target.checkValidity()) {
-        this.$refs.form.reset()
         this.$refs.form.submit()
+        this.$refs.form.reset()
       }
     }
   }
