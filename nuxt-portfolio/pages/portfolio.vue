@@ -28,7 +28,7 @@
       </section>
     </header>
     <main id="projects" class="bg-white text-black mx-auto max-w-4xl">
-      <section class="flex flex-col py-8 px-12 mx-auto max-w-4xl text-center">
+      <section class="flex flex-col pt-8 pb-32 px-12 mx-auto max-w-4xl text-center">
         <h2 class="uppercase font-bold border-b pb-8 text-3xl border-black title-text">My Projects</h2>
         <div class="flex flex-col items-center">
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">Autohotkey Script Collection</h3>
@@ -159,21 +159,21 @@
       </section>
     </main>
     <footer id="contact">
-        <div class="flex contact-background pt-64 flex-col items-center mt-16 px-12">
+        <div class="flex contact-background pt-64 flex-col items-center px-12">
           <h2 class="uppercase font-bold pb-8 text-3xl title-text mt-32 pt-64">Contact Me</h2>
-          <form class="w-full max-w-lg mx-auto" action="https://formsubmit.co/490cf4a56b9daae8a2c33c82ffe923bc" method="POST">
+          <form class="w-full max-w-lg mx-auto" action="https://public.herotofu.com/v1/80f86470-9d20-11ed-82c7-3d7607318e65" method="POST">
             <div class="flex flex-wrap -mx-3 mb-6">
               <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="name">
                   Name
                 </label>
-                <input class="text-black appearance-none block w-full border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="name" id="name" type="text" placeholder="Jane Doe" required>
+                <input class="text-black appearance-none block w-full border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" name="name" id="Name" type="text" placeholder="Jane Doe" required>
               </div>
               <div class="w-full md:w-1/2 px-3">
                 <label class="block uppercase tracking-wide text-xs font-bold mb-2" for="email">
                   Email
                 </label>
-                <input class="text-black appearance-none block w-full border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 focus:border-8" name="email" id="email" type="email" placeholder="jane.doe@example.com" required>
+                <input class="text-black appearance-none block w-full border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500 focus:border-8" name="email" id="Email" type="email" placeholder="jane.doe@example.com" required>
               </div>
             </div>
             <div class="flex flex-col mb-6">
@@ -184,7 +184,7 @@
                 <textarea name="message" class="text-black appearance-none block w-full border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="message" rows="5" placeholder="Your message here" required></textarea>
               </div>
               <div class="flex items-center justify-start">
-                <button class="mt-4 py-3 px-5 border-1 uppercase border" type="submit">
+                <button id="submit-btn" class="mt-4 py-3 px-5 border-1 uppercase border" type="submit">
                   Send
                 </button>
               </div>
