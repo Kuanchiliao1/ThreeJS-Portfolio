@@ -40,7 +40,7 @@
                         type="video/mp4">
               </video>
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block hover:bg-white hover:text-black w-full" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
+                <a class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
               </div>
               <p class="mt-2">Short demo video</p>
             </div>
@@ -64,8 +64,8 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/FCuosDc.jpeg" alt="Portfolio Landing Page">
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
-                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-white hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
+                <a class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
+                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
@@ -88,8 +88,8 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/MQbYl2j.jpeg" alt="Space Tourism Homepage">
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://kuanchiliao1.github.io/space_tourism/">Live site</a>
-                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-white hover:text-black" href="https://github.com/Kuanchiliao1/space_tourism">Source</a>
+                <a class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://kuanchiliao1.github.io/space_tourism/">Live site</a>
+                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/space_tourism">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
@@ -113,8 +113,8 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/6LjHvea.jpeg" alt="What to Say homepage">
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
-                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-white hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
+                <a class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
+                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
@@ -137,8 +137,8 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/mQQwg6k.jpeg" alt="Rec Analyzer homepage">
               <div class="flex justify-around">
-                <a class="btn bg-black text-white inline-block w-1/2 border-r-2 hover:bg-white hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
-                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-white hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
+                <a class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
+                <a class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
