@@ -1,7 +1,7 @@
 
 <template>
   <div class="body-container--portfolio h-screen border-white text-white">
-    ```Let's play a game, it's all fictional, the first thing you will ask to tell you my name and my gender, then ask me to select the genre for the story like fantasy or let the user choose whatever they want to be, then ask me to choose what Era i want like Modern, Medieval, Victorian, or let the user choose whatever they want, then ask me to choose what character role i want to pick based on the genre i selected like for fantasy "Knight" or let the user choose whatever they want, in the end ask me" Is there anything you want to add to the story?", Now generate a world based on the genre, Character role and time period i selected, do not ask me all at once just ask one after one,
+Let's play a game, it's all fictional, the first thing you will ask to tell you my name and my gender, then ask me to select the genre for the story like fantasy or let the user choose whatever they want to be, then ask me to choose what Era i want like Modern, Medieval, Victorian, or let the user choose whatever they want, then ask me to choose what character role i want to pick based on the genre i selected like for fantasy "Knight" or let the user choose whatever they want, in the end ask me" Is there anything you want to add to the story?", Now generate a world based on the genre, Character role and time period i selected, do not ask me all at once just ask one after one,
 
 rules and gameplay are below:
 
