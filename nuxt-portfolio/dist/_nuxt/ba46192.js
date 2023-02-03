@@ -1,0 +1,1 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[7],{269:function(t,e,n){"use strict";n.r(e);var r=n(35),component=Object(r.a)({},(function(){var t=this.$createElement;return(this._self._c||t)("iframe",{attrs:{src:"../static/_Tony_Liao_resume_Two_Barrels.pdf",width:"100%",height:"800"}})}),[],!1,null,null,null);e.default=component.exports}}]);
