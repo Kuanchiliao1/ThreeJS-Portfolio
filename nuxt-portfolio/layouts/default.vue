@@ -80,7 +80,7 @@
 
   .background-img-header {
     position: relative;
-    background-image: url("../static/edited_background_pic.png");
+    background-image: url("../static/edited_background_pic.jpeg");
     background-size: cover;
     background-attachment: fixed;
     background-position: 100% 100%;
