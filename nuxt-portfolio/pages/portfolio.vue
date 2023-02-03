@@ -15,7 +15,7 @@
       <section class="py-32 px-4 mx-auto max-w-4xl text-center flex flex-col align-middle">
         <h1 class="text-6xl title-text uppercase font-bold mb-16 border-b pb-16 mt-32 tracking-wide">About Me</h1>
         <p class="px-1">
-          Hi, I'm Tony! I am a frontend developer with a passion for learning, creating, and experimenting. I love the freedom of learning that programming offers, as well as the amazing power to bring ideas to life through code. I am currently learning learning ThreeJS on the side, and look forward to creating awesome animations and visual effects.
+          Hi, I'm Tony! I'm a Frontend developer with a passion for learning, creating, and experimenting. I love the freedom of learning that programming offers and the incredible power of code to bring ideas to life. I am currently learning ThreeJS for fun and I look forward to creating awesome animations and visual effects.
         </p>
         <br>
         <p>
@@ -45,16 +45,17 @@
               <p class="mt-2">Short demo video</p>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>Autohotkey is what first got me hooked on coding in 2019. It allows for the creation of custom scripts to automate tasks and improve their workflow on Windows computers. I have compiled and wrote a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look and see what you can do with Autohotkey!</p>
-              <h4 class="mt-4 font-bold">
+              <p>Autohotkey the language that got me hooked on coding back in 2019. It allows for the creation of custom scripts to automate tasks and improve workflow on Windows computers. I have wrote and compile a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look at my video and see what you can do with Autohotkey!</p>
+              <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside">
-                <li>Insta Google</li>
-                <li>rem/px conversion</li>
-                <li>A.I. analyzer</li>
+              <ul class="list-disc list-inside text-left">
+                <li>Instant Googler</li>
+                <li>Text expansions</li>
+                <li>Instant rem/px conversions</li>
+                <li>A.I. text analyzer</li>
               </ul>
-              <p class="mt-4 font-bold">Technologies: Autohotkey, OpenAI API</p>
+              <p class="mt-4 font-bold text-left">Technologies: Autohotkey, OpenAI API</p>
             </div>
           </div>
         </div>
@@ -62,23 +63,24 @@
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">Portfolio Landing Page</h3>
           <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start m-0">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
-              <img src="https://i.imgur.com/FCuosDc.jpeg" alt="Portfolio Landing Page">
+              <img src="https://i.imgur.com/XLLtI2n.jpeg" alt="Portfolio Landing Page">
               <div class="flex justify-around">
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>If you can't tell, this websites sole purpose is to look cool and be a bit over the top. It's essentially a colorful 3D drawing board that you can control with your mouse. I built this portfolio landing page as an introduction to Three.js and Vue.js. While originally created by Chris Lis, I added some of my own twists on solutions and made improvements. I'm most proud of a feature I implemented called Rainbow Mode.</p>
-              <h4 class="mt-4 font-bold">
+              <p>The sole purpose of this landing page is to look cool and be a bit over the top. It's essentially a colorful 3D drawing board that you can control with your mouse. I built this portfolio landing page as an introduction to Three.js and Vue.js. While originally created by Chris Lis, I added some of my own twists on his solutions and made new features. I'm most proud of a feature I implemented called Rainbow Mode.</p>
+              <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside">
+              <ul class="list-disc list-inside text-left">
                 <li>Rainbow mode</li>
                 <li>Skip to content for accessibility</li>
                 <li>Orbit controls with mouse</li>
+                <li>Flowing 3D canvas</li>
               </ul>
-              <p class="mt-4 font-bold">Technologies: HTML/CSS/JS, Nuxt.js, Vite, Three.js, Tailwind</p>
+              <p class="mt-4 font-bold text-left">Technologies: HTML/CSS/JS, Nuxt.js, Vite, Three.js, Tailwind</p>
             </div>
           </div>
         </div>
@@ -93,17 +95,17 @@
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>This is a space tourism website that with great info and amazing pictures of the planets, the crew, and the technology in space. I built this website using HTML, CSS, and JavaScript, and utilized CSS custom properties and utility classes to create a maintainable and reusable codebase. I also took this opportunity to study best practices for accessibility and to gain insights into project planning and implementation using a Figma design file.</p>
-              <h4 class="mt-4 font-bold">
+              <p>A space tourism website that with great info and amazing sections/pictures of the planets, the crew, and the technology in space. I built this website using vanilla HTML, CSS, and JavaScript, and utilized CSS custom properties and utility classes to create a maintainable and reusable codebase. I also took this opportunity to study best practices for accessibility and to gain insights into project planning and implementation using a Figma design file.</p>
+              <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside">
+              <ul class="list-disc list-inside text-left">
                 <li>Multiple background images for different screen sizes</li>
                 <li>Keyboard accessibility</li>
-                <li>Animated button</li>
+                <li>Animated large button</li>
                 <li>Fun space facts</li>
               </ul>
-              <p class="mt-4 font-bold">Technologies: HTML/CSS/JS, Github Pages, Figma</p>
+              <p class="mt-4 font-bold text-left">Technologies: HTML/CSS/JS, Github Pages, Figma</p>
             </div>
           </div>
         </div>
@@ -118,16 +120,17 @@
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>This is a personal language learning handbook with the purpose of helping new language learners track phrases and their responses, as well as take notes on them. I focused mainly focused on the back end at first and used Ruby with the Sinatra framework. I implemented many features that we users take for granted with minimal dependencies. Some of these include URL validation, pagination, and flash messaging.</p>
-              <h4 class="mt-4 font-bold">
+              <p>A personal language learning handbook to help new language learners track phrases and their responses, as well as take notes on them. I focused mainly focused on the back end at first and used Ruby with the Sinatra framework. I implemented many features that I used to take for granted with minimal dependencies. These include custom solutions to URL validation, pagination, and flash messaging. I later used Bootstrap for the styling.</p>
+              <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside">
+              <ul class="list-disc list-inside text-left">
                 <li>Persist data through PSQL database and session storage</li>
                 <li>Multiple simultaneous validations of Entry inputs</li>
+                <li>User sign in and validation</li>
                 <li>A.I. generated rated responses coming soon!</li>
               </ul>
-              <p class="mt-4 font-bold">Technologies: Ruby, Sinatra, PSQL, Heroku, HTML/CSS</p>
+              <p class="mt-4 font-bold text-left">Technologies: Ruby, Sinatra, PSQL, Heroku, HTML/CSS, Bootstrap</p>
             </div>
           </div>
         </div>
@@ -137,22 +140,21 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/mQQwg6k.jpeg" alt="Rec Analyzer homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/Recommendation_Analyzer">Source</a>
               </div>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>The premise is that we all have friends and family who give us way too many recommendations on shows, movies, whatever. To avoid feeling the guilt, we just let an algorithm decide for us and analyze our recommendation. I'm working on this with two of my friends, and it's still a work in progress. We are making everything, including the design files. Stay tuned!</p>
-              <h4 class="mt-4 font-bold">
-                In progress...
+              <p>We all have friends and family who give us way too many recommendations on shows, movies, whatever. To avoid feeling the guilt, we should let an algorithm decide for us and analyze our recommendation. I'm working on Rec Analyzer with two other developers, and it's still a work in progress. We are making everything, including the design files. Stay tuned!</p>
+              <h4 class="mt-4 font-bold text-left">
+                Features (In progress...)
               </h4>
-              <ul>
+              <ul class="list-disc list-inside text-left">
                 <li>OOP design</li>
                 <li>Schema designed for multiple users</li>
                 <li>Google authentication</li>
-                <li>Place to rate your friends</li>
+                <li>Ability to rate your friends</li>
               </ul>
-              <p class="mt-4 font-bold">Technologies: Ruby, Sinatra, PSQL, Figma, SCSS, JQuery</p>
+              <p class="mt-4 font-bold text-left">Technologies: Ruby, Sinatra, PSQL, Figma, SCSS, JQuery</p>
             </div>
           </div>
         </div>
