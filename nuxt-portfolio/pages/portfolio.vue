@@ -42,20 +42,23 @@
               <div class="flex justify-around">
                 <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
               </div>
-              <p class="mt-2">Short demo video</p>
+              <p class="shadow-lg bg-gray-100">Short demo</p>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">Autohotkey</li>
+                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
+              </ul>
             </div>
-            <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
               <p>Autohotkey the language that got me hooked on coding back in 2019. It allows for the creation of custom scripts to automate tasks and improve workflow on Windows computers. I have wrote and compile a large collection of scripts that have helped me automate my programming and regular workflows. This project is ongoing as I continually add new functionality and optimize my existing code. Take a look at my video and see what you can do with Autohotkey!</p>
               <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside text-left">
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
                 <li>Instant Googler</li>
                 <li>Text expansions</li>
                 <li>Instant rem/px conversions</li>
                 <li>A.I. text analyzer</li>
               </ul>
-              <p class="mt-4 font-bold text-left">Technologies: Autohotkey, OpenAI API</p>
             </div>
           </div>
         </div>
@@ -68,19 +71,25 @@
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
               </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 shadow-lg">Nuxt.js</li>
+                <li class="flex-grow px-3 shadow-lg">Vite</li>
+                <li class="flex-grow px-3 shadow-lg">Three.js</li>
+                <li class="flex-grow px-3 shadow-lg">Tailwind</li>
+              </ul>
             </div>
-            <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
               <p>The sole purpose of this landing page is to look cool and be a bit over the top. It's essentially a colorful 3D drawing board that you can control with your mouse. I built this portfolio landing page as an introduction to Three.js and Vue.js. While originally created by Chris Lis, I added some of my own twists on his solutions and made new features. I'm most proud of a feature I implemented called Rainbow Mode.</p>
               <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside text-left">
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
                 <li>Rainbow mode</li>
                 <li>Skip to content for accessibility</li>
                 <li>Orbit controls with mouse</li>
                 <li>Flowing 3D canvas</li>
               </ul>
-              <p class="mt-4 font-bold text-left">Technologies: HTML/CSS/JS, Nuxt.js, Vite, Three.js, Tailwind</p>
             </div>
           </div>
         </div>
@@ -93,19 +102,23 @@
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://kuanchiliao1.github.io/space_tourism/">Live site</a>
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/space_tourism">Source</a>
               </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 shadow-lg">Github Pages</li>
+                <li class="flex-grow px-3 shadow-lg">Figma</li>
+              </ul>
             </div>
-            <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
               <p>A space tourism website that with great info and amazing sections/pictures of the planets, the crew, and the technology in space. I built this website using vanilla HTML, CSS, and JavaScript, and utilized CSS custom properties and utility classes to create a maintainable and reusable codebase. I also took this opportunity to study best practices for accessibility and to gain insights into project planning and implementation using a Figma design file.</p>
               <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside text-left">
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
                 <li>Multiple background images for different screen sizes</li>
                 <li>Keyboard accessibility</li>
                 <li>Animated large button</li>
                 <li>Fun space facts</li>
               </ul>
-              <p class="mt-4 font-bold text-left">Technologies: HTML/CSS/JS, Github Pages, Figma</p>
             </div>
           </div>
         </div>
@@ -118,19 +131,26 @@
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
               </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">Ruby</li>
+                <li class="flex-grow px-3 shadow-lg">Sinatra</li>
+                <li class="flex-grow px-3 shadow-lg">PSQL</li>
+                <li class="flex-grow px-3 shadow-lg">Heroku</li>
+                <li class="flex-grow px-3 shadow-lg">HTML/CSS</li>
+                <li class="flex-grow px-3 shadow-lg">Bootstrap</li>
+              </ul>
             </div>
-            <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
-              <p>A personal language learning handbook to help new language learners track phrases and their responses, as well as take notes on them. I focused mainly focused on the back end at first and used Ruby with the Sinatra framework. I implemented many features that I used to take for granted with minimal dependencies. These include custom solutions to URL validation, pagination, and flash messaging. I later used Bootstrap for the styling.</p>
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
+              <p>A personal language learning handbook to help new language learners track phrases and their responses, as well as take notes on them. I focused mainly focused on the Backend at first and used Ruby with the Sinatra framework. I implemented many features that I used to take for granted with minimal dependencies. These include custom solutions to URL validation, pagination, and flash messaging. I later used Bootstrap for the styling.</p>
               <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
-              <ul class="list-disc list-inside text-left">
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
                 <li>Persist data through PSQL database and session storage</li>
                 <li>Multiple simultaneous validations of Entry inputs</li>
                 <li>User sign in and validation</li>
                 <li>A.I. generated rated responses coming soon!</li>
               </ul>
-              <p class="mt-4 font-bold text-left">Technologies: Ruby, Sinatra, PSQL, Heroku, HTML/CSS, Bootstrap</p>
             </div>
           </div>
         </div>
@@ -142,19 +162,26 @@
               <div class="flex justify-around">
                 <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/Recommendation_Analyzer">Source</a>
               </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">Ruby</li>
+                <li class="flex-grow px-3 shadow-lg">Sinatra</li>
+                <li class="flex-grow px-3 shadow-lg">PSQL</li>
+                <li class="flex-grow px-3 shadow-lg">Figma</li>
+                <li class="flex-grow px-3 shadow-lg">HTML/SCSS</li>
+                <li class="flex-grow px-3 shadow-lg">JQuery</li>
+              </ul>
             </div>
-            <div class="w-full md:w-5/12 flex flex-col justify-between text-start md:text-left">
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
               <p>We all have friends and family who give us way too many recommendations on shows, movies, whatever. To avoid feeling the guilt, we should let an algorithm decide for us and analyze our recommendation. I'm working on Rec Analyzer with two other developers, and it's still a work in progress. We are making everything, including the design files. Stay tuned!</p>
               <h4 class="mt-4 font-bold text-left">
                 Features (In progress...)
               </h4>
-              <ul class="list-disc list-inside text-left">
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
                 <li>OOP design</li>
                 <li>Schema designed for multiple users</li>
                 <li>Google authentication</li>
                 <li>Ability to rate your friends</li>
               </ul>
-              <p class="mt-4 font-bold text-left">Technologies: Ruby, Sinatra, PSQL, Figma, SCSS, JQuery</p>
             </div>
           </div>
         </div>
