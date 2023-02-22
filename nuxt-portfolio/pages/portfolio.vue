@@ -19,7 +19,7 @@
         </p>
         <br>
         <p>
-          Outside of work, I thoroughly enjoy exploring my creative side through drone photography, playing the piano, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
+          Outside of work, I thoroughly enjoy exploring my creative side through drone photography, <a href="https://www.youtube.com/watch?v=EvSgiY0UJr0" class="underline" target="_blank">playing the piano</a>, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
           <a target="_blank" href="https://bit.ly/tony-resume-link" class="py-3 px-5 border-1 uppercase border">Résumé</a>
@@ -58,6 +58,34 @@
                 <li>Text expansions</li>
                 <li>Instant rem/px conversions</li>
                 <li>A.I. text analyzer</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
+          <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">Love Letter Generator</h3>
+          <div class="flex  flex-row flex-wrap justify-between gap-0.5 text-start">
+            <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
+              <img src="https://i.imgur.com/eNP7AD8.jpeg" alt="Love letter generator homepage">
+              <div class="flex justify-around">
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://love-letter-generator.netlify.app/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/love_letter_generator">Source</a>
+              </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
+              </ul>
+            </div>
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
+              <p>I finished this simple app using only vanilla JavaScript just before Valentine's Day. Connecting to the API without a framework was a fun challenge and I really enjoyed working with the AI prompts. It was especially fun figuring out I can trick Github into hosting my naked API key without any backend. Normally they would autodetect and disable it. This project taught me a lot about env variables and their role in data security. The API key here is intentionally completely exposed and I have its usage capped at $1. I hope that this app was able to save someone who completely forgot about Valentines and was desperate to generate something.</p>
+              <h4 class="mt-4 font-bold text-left">
+                Features
+              </h4>
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
+                <li>text-da-vinci-003 from OpenAI</li>
+                <li>Custom love letter</li>
+                <li>Randomly generated filler data</li>
+                <li>Vanilla all the way!</li>
               </ul>
             </div>
           </div>
@@ -248,3 +276,5 @@ export default {
   }
 }
 </script>
+
+
