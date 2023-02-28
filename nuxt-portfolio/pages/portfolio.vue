@@ -22,7 +22,7 @@
           Outside of work, I thoroughly enjoy exploring my creative side through drone photography, <a href="https://www.youtube.com/watch?v=EvSgiY0UJr0" class="underline" target="_blank">playing the piano</a>, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
-          <a target="_blank" href="https://bit.ly/tony-resume-link" class="py-3 px-5 border-1 uppercase border">Résumé</a>
+          <a target="_blank" href="https://bit.ly/tony-resume-pdf" class="py-3 px-5 border-1 uppercase border">Résumé</a>
           <a target="_blank" href="https://github.com/Kuanchiliao1" class="py-3 px-5 border-1 uppercase border">Github</a>
         </div>
       </section>
@@ -252,6 +252,7 @@
           <br>
           <br>
         </div>
+        <iframe src="https://www.w3schools.com" title="W3Schools Free Online Web Tutorials"></iframe>
       </footer>
   </div>
 </template>
@@ -265,6 +266,7 @@ export default {
   },
   mounted() {
     this.isLoaded = true
+    this.fetchWhatToSay()
   },
   methods: {
     onSubmit(event) {
@@ -272,6 +274,14 @@ export default {
         this.$refs.form.submit()
         this.$refs.form.reset()
       }
+    },
+    // This is a temporary solution to wake up my Heroku dyno for my project What to Say
+    fetchWhatToSay() {
+      fetch('https://what-to-say.herokuapp.com/entries_page/0', {
+        mode: 'no-cors'
+      })
+        .then(response => console.log("Request sent to wake up dyno, ignoring response"))
+        .catch(error => console.log("Request failed", error))
     }
   }
 }
