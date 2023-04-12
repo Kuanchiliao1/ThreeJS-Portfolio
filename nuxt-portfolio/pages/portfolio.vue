@@ -31,6 +31,36 @@
       <section class="flex flex-col pt-8 pb-32 px-12 mx-auto max-w-4xl text-center">
         <h2 class="uppercase font-bold border-b pb-8 text-3xl border-black title-text">My Projects</h2>
         <div class="flex flex-col items-center">
+          <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">🤖 Quizzical</h3>
+          <div class="flex flex-row flex-wrap justify-between gap-0.5 text-start">
+            <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
+              <img src="https://i.imgur.com/6syPtxR.jpeg" alt="Quizzical homepage">
+              <div class="flex justify-around">
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://quizzical-ai-edition-v3.netlify.app/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/quizzical_react">Source</a>
+              </div>
+              <ul class="flex flex-wrap gap-1 mt-2">
+                <li class="flex-grow px-3 shadow-lg">React</li>
+                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
+                <li class="flex-grow px-3 shadow-lg">Opentdb API</li>
+                <li class="flex-grow px-3 shadow-lg">Vite</li>
+              </ul>
+            </div>
+            <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
+              <p>Quizzical is a fun and engaging React-based quiz application that generates personalized quizzes based on user input, using OpenAI's GPT-Turbo model. Users can bookmark their favorite questions, request AI-generated explanations, and receive custom feedback on their scores. Local storage is used to save quiz questions and user scores, making it easy for users to track progress and revisit questions. This project was chosen and featured in a Scrimba newsletter!</p>
+              <h4 class="mt-4 font-bold text-left">
+                Features
+              </h4>
+              <ul class="ml-4 list-outside list-disc list-inside text-left">
+                <li>Dynamic quiz generation tailored to user input</li>
+                <li>AI-generated explanations for puzzling questions</li>
+                <li>AI feedback to celebrate your quiz prowess</li>
+                <li>Bookmark your favorite questions for later</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="flex flex-col items-center">
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">Autohotkey Script Collection</h3>
           <div class="flex items-start flex-row flex-wrap justify-between gap-0.5 text-start">
             <!-- <img class="pt-1 block w-full md:w-5/12 self-start" src="https://i.imgur.com/FCuosDc.jpeg" alt="########"> -->
