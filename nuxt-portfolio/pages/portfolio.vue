@@ -47,7 +47,7 @@
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
-              <p>Quizzical is a fun and engaging React-based quiz application that generates personalized quizzes based on user input, using OpenAI's GPT-Turbo model. Users can bookmark their favorite questions, request AI-generated explanations, and receive custom feedback on their scores. Local storage is used to save quiz questions and user scores, making it easy for users to track progress and revisit questions. This project was chosen and featured in a Scrimba newsletter!</p>
+              <p>Quizzical is a fun and engaging React-based quiz application that generates personalized quizzes based on user input, using OpenAI's GPT-Turbo model. Users can bookmark their favorite questions, request AI-generated explanations, and receive custom feedback on their scores. Local storage was used to save quiz questions and user scores, making it easy for users to track progress and revisit questions. This project was also featured in a <a class="underline" href="../Tony_Liao_resume_Two_Barrels.pdf">Scrimba newsletter.</a></p>
               <h4 class="mt-4 font-bold text-left">
                 Features
               </h4>
