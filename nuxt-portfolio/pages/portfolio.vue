@@ -19,7 +19,7 @@
         </p>
         <br>
         <p>
-          Outside of work, I thoroughly enjoy exploring my creative side through drone photography, <a href="https://www.youtube.com/watch?v=EvSgiY0UJr0" class="underline" target="_blank">playing the piano</a>, and performing card magic. I also love playing with A.I. text models like GPT-3 to push the limits and find their capabilities.
+          Outside of work, I thoroughly enjoy exploring my creative side through drone photography, <a href="https://www.youtube.com/watch?v=EvSgiY0UJr0" class="underline" target="_blank">playing the piano</a>, and performing card magic. I also love building apps with language models like GPT-4 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
           <a target="_blank" href="../_Tony_Liao_resume_.pdf" class="py-3 px-5 border-1 uppercase border">Résumé</a>
@@ -34,20 +34,22 @@
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">☁️ ClaudeAtlas</h3>
           <div class="flex flex-row flex-wrap justify-between gap-0.5 text-start">
               <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
-                  <img src="https://www.loom.com/share/23910f125e5248b196cf05335e1c4a34?sid=41df28ba-65ad-4cfe-b5f6-1110355476bc" alt="ClaudeAtlas homepage">
+                <div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/23910f125e5248b196cf05335e1c4a34?sid=9f195276-cb42-44c6-b6bd-fc38abc41665" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                   <div class="flex justify-around">
-                      <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="YOUR_LIVE_SITE_LINK_HERE">Live site</a>
-                      <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="YOUR_GITHUB_REPO_LINK_HERE">Source</a>
+                    <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://devpost.com/software/kickass-team">DevPost</a>
+                      <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://github.com/tyranitar/anthropic-hackathon">Source</a>
                   </div>
                   <ul class="flex flex-wrap gap-1 mt-2">
                       <li class="flex-grow px-3 shadow-lg">NextJS</li>
+                      <li class="flex-grow px-3 shadow-lg">Claude API</li>
+                      <li class="flex-grow px-3 shadow-lg">Redux Toolkit</li>
                       <li class="flex-grow px-3 shadow-lg">FastAPI</li>
                       <li class="flex-grow px-3 shadow-lg">Langchain</li>
                       <li class="flex-grow px-3 shadow-lg">Google Maps and Calendar APIs</li>
                   </ul>
               </div>
               <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
-                  <p>ClaudeAtlas makes travel planning a breeze. It transforms the traditional tedious travel planning process into an intuitive and delightful experience. This project not only won the audience choice award at the <a class="underline" href="YOUR_LINK_TO_ANTHROPIC_HACKATHON_HERE">Anthropic hackathon</a>, but also offered me invaluable insights into teamwork and collaboration. Learn more about our process and features in this <a class="underline" href="https://www.excalidraw.com/">excalidraw</a>.</p>
+                  <p>ClaudeAtlas makes travel planning a breeze. It transforms the traditional tedious travel planning process into an intuitive and delightful experience. This project not only won the audience choice award at the <a class="underline" href="https://claude2hackathon.devpost.com/project-gallery">Anthropic hackathon</a>, but also offered me invaluable insights into teamwork and collaboration. Learn more about our thought and design process in this <a class="underline" href="https://excalidraw.com/#json=FAH1NeDIbUPwxmKkS_II-,KCRSumHP2-pNulp2IehGHw">Excalidraw</a>. On the left is a demo done by my awesome teammate Ken.</p>
                   <h4 class="mt-4 font-bold text-left">
                       Features
                   </h4>
