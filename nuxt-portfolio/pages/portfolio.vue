@@ -31,6 +31,36 @@
       <section class="flex flex-col pt-8 pb-32 px-12 mx-auto max-w-4xl text-center">
         <h2 class="uppercase font-bold border-b pb-8 text-3xl border-black title-text">My Projects</h2>
         <div class="flex flex-col items-center">
+          <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">☁️ ClaudeAtlas</h3>
+          <div class="flex flex-row flex-wrap justify-between gap-0.5 text-start">
+              <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
+                  <img src="https://www.loom.com/share/23910f125e5248b196cf05335e1c4a34?sid=41df28ba-65ad-4cfe-b5f6-1110355476bc" alt="ClaudeAtlas homepage">
+                  <div class="flex justify-around">
+                      <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="YOUR_LIVE_SITE_LINK_HERE">Live site</a>
+                      <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="YOUR_GITHUB_REPO_LINK_HERE">Source</a>
+                  </div>
+                  <ul class="flex flex-wrap gap-1 mt-2">
+                      <li class="flex-grow px-3 shadow-lg">NextJS</li>
+                      <li class="flex-grow px-3 shadow-lg">FastAPI</li>
+                      <li class="flex-grow px-3 shadow-lg">Langchain</li>
+                      <li class="flex-grow px-3 shadow-lg">Google Maps and Calendar APIs</li>
+                  </ul>
+              </div>
+              <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
+                  <p>ClaudeAtlas makes travel planning a breeze. It transforms the traditional tedious travel planning process into an intuitive and delightful experience. This project not only won the audience choice award at the <a class="underline" href="YOUR_LINK_TO_ANTHROPIC_HACKATHON_HERE">Anthropic hackathon</a>, but also offered me invaluable insights into teamwork and collaboration. Learn more about our process and features in this <a class="underline" href="https://www.excalidraw.com/">excalidraw</a>.</p>
+                  <h4 class="mt-4 font-bold text-left">
+                      Features
+                  </h4>
+                  <ul class="ml-4 list-outside list-disc list-inside text-left">
+                      <li>Interactive decision-making with fun travel ideas</li>
+                      <li>Visualization tools for planning using a calendar and map</li>
+                      <li>Natural language prompting for easy itinerary changes</li>
+                      <li>Seamless Google Calendar integration</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+        <div class="flex flex-col items-center">
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">🤖 Quizzical</h3>
           <div class="flex flex-row flex-wrap justify-between gap-0.5 text-start">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
@@ -72,7 +102,6 @@
               <div class="flex justify-around">
                 <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
               </div>
-              <p class="shadow-lg bg-gray-100">Short demo</p>
               <ul class="flex flex-wrap gap-1 mt-2">
                 <li class="flex-grow px-3 shadow-lg">Autohotkey</li>
                 <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
