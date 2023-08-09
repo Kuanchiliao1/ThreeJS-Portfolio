@@ -36,7 +36,7 @@
               <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
                 <div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/23910f125e5248b196cf05335e1c4a34?sid=9f195276-cb42-44c6-b6bd-fc38abc41665" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                   <div class="flex justify-around">
-                    <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://devpost.com/software/kickass-team">DevPost</a>
+                    <a target="_blank" class="border-r btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://devpost.com/software/kickass-team">DevPost</a>
                       <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://github.com/tyranitar/anthropic-hackathon">Source</a>
                   </div>
                   <ul class="flex flex-wrap gap-1 mt-2">
@@ -66,7 +66,7 @@
           <h3 class="font-bold text-2xl pb-4 mb-6 mt-8 border-b border-black w-1/2">🤖 Quizzical</h3>
           <div class="flex flex-row flex-wrap justify-between gap-0.5 text-start">
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
-              <img src="https://i.imgur.com/6syPtxR.jpeg" alt="Quizzical homepage">
+              <img src="https://i.imgur.com/IBmdVko.jpeg" alt="Quizzical homepage">
               <div class="flex justify-around">
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://quizzical-ai-edition-v3.netlify.app/">Live site</a>
                 <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/quizzical_react">Source</a>
