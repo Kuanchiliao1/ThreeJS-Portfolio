@@ -4,12 +4,12 @@
     <!-- The ref attribute allows us to reference this element: this.$refs.canvas -->
     <canvas ref="canvas"></canvas>
     <a class="skip-to-projects" href="/portfolio">Skip to Projects</a>
-    <div id="container--intro" class="absolute text-white text-center center-Y center-X text-shadow">
+    <div id="container--intro" class="pointer-events-none absolute text-white text-center center-Y center-X text-shadow">
       <h1 id="tony-liao" class="translate-Y-down opacity-0 text-xl font-mono uppercase tracking-wide">Tony Liao</h1>
       <p id="portfolio-description" class="translate-Y-down opacity-0 text-4xl font-exo font-size-title">FRONTEND DEVELOPER AND EXPERIMENTER AT HEART</p>
       <div>
-        <a tabindex="0" id="my-work-btn" class="cursor-pointer translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black">View My Work</a>
-        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono rainbow-text hover:bg-white">Rainbow Mode</button>
+        <a tabindex="0" id="my-work-btn" class="cursor-pointer translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono hover:bg-white hover:text-black pointer-events-auto">View My Work</a>
+        <button id="rainbow-btn" class="translate-Y-down opacity-0 inline-block mt-8 border-2 px-4 py-2 rounded-lg text-sm font-mono rainbow-text hover:bg-white pointer-events-auto">Rainbow Mode</button>
       </div>
     </div>
   </div>
