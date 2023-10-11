@@ -22,7 +22,7 @@
           Outside of work, I thoroughly enjoy exploring my creative side through drone photography, <a href="https://www.youtube.com/watch?v=EvSgiY0UJr0" class="underline" target="_blank">playing the piano</a>, and performing card magic. I also love building apps with language models like GPT-4 to push the limits and find their capabilities.
         </p>
         <div class="flex gap-20 max-w-min mt-12 self-center">
-          <a target="_blank" href="../_Tony_Liao_resume_.pdf" class="py-3 px-5 border-1 uppercase border">Résumé</a>
+          <a target="_blank" href="../_Tony_Liao_resume_.pdf" class="py-3 px-5 border-1 uppercase border">Resume</a>
           <a target="_blank" href="https://github.com/Kuanchiliao1" class="py-3 px-5 border-1 uppercase border">Github</a>
         </div>
       </section>
