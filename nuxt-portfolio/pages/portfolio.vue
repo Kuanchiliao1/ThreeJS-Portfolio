@@ -36,16 +36,16 @@
               <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
                 <div style="position: relative; padding-bottom: 64.63195691202873%; height: 0;"><iframe src="https://www.loom.com/embed/23910f125e5248b196cf05335e1c4a34?sid=9f195276-cb42-44c6-b6bd-fc38abc41665" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"></iframe></div>
                   <div class="flex justify-around">
-                    <a target="_blank" class="border-r btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://devpost.com/software/kickass-team">DevPost</a>
-                      <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black" href="https://github.com/tyranitar/anthropic-hackathon">Source</a>
+                    <a target="_blank" class="btn bg-black text-white inline-block border-r w-1/2 hover:bg-gray-100 hover:text-black py-1 underline transition-colors duration-300" href="https://devpost.com/software/kickass-team">DevPost</a>
+                      <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline transition-colors duration-300" href="https://github.com/tyranitar/anthropic-hackathon">Source</a>
                   </div>
                   <ul class="flex flex-wrap gap-1 mt-2">
-                      <li class="flex-grow px-3 shadow-lg">NextJS</li>
-                      <li class="flex-grow px-3 shadow-lg">Claude API</li>
-                      <li class="flex-grow px-3 shadow-lg">Redux Toolkit</li>
-                      <li class="flex-grow px-3 shadow-lg">FastAPI</li>
-                      <li class="flex-grow px-3 shadow-lg">Langchain</li>
-                      <li class="flex-grow px-3 shadow-lg">Google Maps and Calendar APIs</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">NextJS</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">Claude API</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">Redux Toolkit</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">FastAPI</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">Langchain</li>
+                      <li class="flex-grow px-3 border-black border-solid border py-1">Google Maps and Calendar APIs</li>
                   </ul>
               </div>
               <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -68,14 +68,14 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/IBmdVko.jpeg" alt="Quizzical homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://quizzical-ai-edition-v3.netlify.app/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/quizzical_react">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://quizzical-ai-edition-v3.netlify.app/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/quizzical_react">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">React</li>
-                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
-                <li class="flex-grow px-3 shadow-lg">Opentdb API</li>
-                <li class="flex-grow px-3 shadow-lg">Vite</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">React</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">OpenAI API</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Opentdb API</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Vite</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -102,11 +102,11 @@
                         type="video/mp4">
               </video>
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/PersonalAHK">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">Autohotkey</li>
-                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Autohotkey</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">OpenAI API</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -129,12 +129,12 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/eNP7AD8.jpeg" alt="Love letter generator homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://love-letter-generator.netlify.app/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/love_letter_generator">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://love-letter-generator.netlify.app/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/love_letter_generator">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
-                <li class="flex-grow px-3 shadow-lg">OpenAI API</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1 bg-slate-400">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">OpenAI API</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -157,15 +157,15 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/XLLtI2n.jpeg" alt="Portfolio Landing Page">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://tony-landing-page.netlify.app/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://tony-landing-page.netlify.app/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/ThreeJS-Portfolio">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
-                <li class="flex-grow px-3 shadow-lg">Nuxt.js</li>
-                <li class="flex-grow px-3 shadow-lg">Vite</li>
-                <li class="flex-grow px-3 shadow-lg">Three.js</li>
-                <li class="flex-grow px-3 shadow-lg">Tailwind</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Nuxt.js</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Vite</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Three.js</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Tailwind</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -188,13 +188,13 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/MQbYl2j.jpeg" alt="Space Tourism Homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://kuanchiliao1.github.io/space_tourism/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/space_tourism">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://kuanchiliao1.github.io/space_tourism/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/space_tourism">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">HTML/CSS/JS</li>
-                <li class="flex-grow px-3 shadow-lg">Github Pages</li>
-                <li class="flex-grow px-3 shadow-lg">Figma</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">HTML/CSS/JS</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Github Pages</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Figma</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -217,16 +217,16 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/6LjHvea.jpeg" alt="What to Say homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black" href="https://what-to-say.herokuapp.com/">Live site</a>
-                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 border-r hover:bg-gray-100 hover:text-black underline py-1" href="https://what-to-say.herokuapp.com/">Live site</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-1/2 hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/what_to_say">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">Ruby</li>
-                <li class="flex-grow px-3 shadow-lg">Sinatra</li>
-                <li class="flex-grow px-3 shadow-lg">PSQL</li>
-                <li class="flex-grow px-3 shadow-lg">Heroku</li>
-                <li class="flex-grow px-3 shadow-lg">HTML/CSS</li>
-                <li class="flex-grow px-3 shadow-lg">Bootstrap</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Ruby</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Sinatra</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">PSQL</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Heroku</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">HTML/CSS</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Bootstrap</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
@@ -249,15 +249,15 @@
             <div class="mb-5 pt-1 block w-full md:w-5/12 self-start">
               <img src="https://i.imgur.com/mQQwg6k.jpeg" alt="Rec Analyzer homepage">
               <div class="flex justify-around">
-                <a target="_blank" class="btn bg-black text-white inline-block hover:bg-gray-100 hover:text-black w-full" href="https://github.com/Kuanchiliao1/Recommendation_Analyzer">Source</a>
+                <a target="_blank" class="btn bg-black text-white inline-block w-full hover:bg-gray-100 hover:text-black py-1 underline  transition-colors duration-300" href="https://github.com/Kuanchiliao1/Recommendation_Analyzer">Source</a>
               </div>
               <ul class="flex flex-wrap gap-1 mt-2">
-                <li class="flex-grow px-3 shadow-lg">Ruby</li>
-                <li class="flex-grow px-3 shadow-lg">Sinatra</li>
-                <li class="flex-grow px-3 shadow-lg">PSQL</li>
-                <li class="flex-grow px-3 shadow-lg">Figma</li>
-                <li class="flex-grow px-3 shadow-lg">HTML/SCSS</li>
-                <li class="flex-grow px-3 shadow-lg">JQuery</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Ruby</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Sinatra</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">PSQL</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">Figma</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">HTML/SCSS</li>
+                <li class="flex-grow px-3 border-black border-solid border py-1">JQuery</li>
               </ul>
             </div>
             <div class="w-full md:w-5/12 flex flex-col justify-between text-start text-left">
